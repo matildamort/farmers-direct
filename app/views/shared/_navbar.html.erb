@@ -18,9 +18,9 @@
         <!-- Why not linking to sign-up, but linking to sign in? -->
         <%= link_to'Sign-up', new_user_session_path, class:"nav-item nav-link active" %>
     <% else %>
-        <%= link_to'Sign-out', destroy_user_session_path, class:"nav-item nav-link active" %>
+        <%= link_to'Sign-out', destroy_user_session_path, method: delete,  class:"nav-item nav-link active" %>
     <%end%>
-    
+
     </div>
   </div>
 </nav>
