@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+<%= link_to'Farmers Direct', root_path, class:"navbar-brand" %>
+
+  <!--Responsive sandwich icon, NOT WORKING! TO FIX TIME PERMIT -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navigation items -->
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+    <%= link_to'About', root_path, class:"nav-item nav-link active" %>
+    <%= link_to'Products', root_path, class:"nav-item nav-link active" %>
+    <% if !user_signed_in? %> 
+        <%= link_to'Sign-in', user_session_path, class:"nav-item nav-link active" %>
+
+        <!-- Why not linking to sign-up, but linking to sign in? -->
+        <%= link_to'Sign-up', new_user_session_path, class:"nav-item nav-link active" %>
+    <% else %>
+        <%= link_to'Sign-out', destroy_user_session_path, class:"nav-item nav-link active" %>
+    <%end%>
+    
+    </div>
+  </div>
+</nav>
