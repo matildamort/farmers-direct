@@ -1,24 +1,92 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Purpose 
+Coles and Woolworths attempt to complete with the low prices of Aldi has seen both businesses focus heavily of 'low prices'. Rather than reduce running costs or reducing operating costs through simplified operating such as Aldi's model, these businesses have used thier buying power and ‘negotiate’ price reductions. This fundamentally reduces our suppliers’ profit and loss to theirs
 
-Things you may want to cover:
+This application seeks to allow farmers to set thier own pricing model on thier goods and sell directly to thier customers. Customers can choose which farmers they wish to puchase from, customers can purchase from multiple farmers within thier local and have one sinmple pick-up or delivery of thier purcase. 
 
-* Ruby version
+Once a customer has checked out, the order is placed with a farmer, who will drop off the goods at a centralised local warehouse for processing, quality control and shippment. 
 
-* System dependencies
+Farm Direct's model will be to take a percentage of all sales, to cover operating costs, delivery and a small profit margin. Although this still has a middle man the overall profit margin for farmers and small businesses is still significantly increased. 
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+## Why this app?
+There are currently a few apps on the market that have 'similar' concepts; however this is still a niche market and the business models currently seen as different in that they either operate as one business, one face, one brand and do not promote the farmers directly or they have not integrated e-commerce and simply show the end user where the local farmers are and the customer has little option to purchase without contacting each farmer individually. 
 
-* How to run the test suite
+I believe our farmers should recieve greater recognition and in turn profits for thier hard work and not be undervalued. In addition, we have a huge amount of food waste as the 'standard' of produce aesthetics is driven by our duopoly couple, coles and woolworths. This app provides an opportunity for farmers to sell these products directly without reducing the price or contributing to food waste unnessecarily. 
 
-* Services (job queues, cache servers, search engines, etc.)
+## Links
+A link (URL) to your deployed app (i.e. website)
+A link to your GitHub repository (repo).
 
-* Deployment instructions
+## Description
+R11	Description of your marketplace app (website), including:
+- Purpose
+- Functionality / features
+- Sitemap
+- Screenshots
+- Target audience
+- Tech stack (e.g. html, css, deployment platform, etc)
 
-* ...
+## Target audience 
+
+### The concious parent - typically middle to upper socio economic scale
+As a busy parent,
+I want fresh fruit and vegetable delivered to my home directly from farmers,
+So that I can reduce the time I need to spend grocery shopping and I can still feed myself and my family neitricious meals while not reducin g my capitalism footprint.
+
+
+### Small farmer
+As a local farmer, 
+I want an easier way to sell my good directly to the community wouthout attending farmers markets,
+So that I can increase my profit and reduce my labour time. 
+
+### Big farmer
+As a large diverse farmer, 
+I want to sell my excess produce to the public without needing to deal with the public directly, 
+So that I can increase my profit margin, reduce waste and reduce labour time of waste management. 
+
+
+### Community memeber - lower soicio economic
+As an parent with a large family and low income, 
+I want be able to purchase afford to f, I don't care if the visual of the product is not great aslong as it is fresh, and
+so that I can eed my family more fresh food rather than filling on pasta and bread products
+
+
+### As a more informed young person 
+As a Gen Z,
+I want to purchase directly from suppliers and farmers,
+so that I can reduce my carbon footprint and also reduce the profit margin of corporate greed.
+
+
+
+## ADD USER STORY TABLE HERE E.G IF USER IS LOGGED IN ECT ECT
+
+
+## Wireframes
+Wireframes for your app
+
+## Screenshots
+SCREEN SHOTS OF FINAL SITE HERE
+
+## Entity relationship diagram
+An ERD for your app
+
+## Abstractions
+Explain the different high-level components (abstractions) in your app
+
+## Third party services
+Detail any third party services that your app will use
+
+## Relationship model
+Describe your projects models in terms of the relationships (active record associations) they have with each other
+
+## Database relations
+Discuss the database relations to be implemented in your application
+
+## Database design
+Provide your database schema design - How is this different to your ERD and a photo of it. 
+
+## TBA?
+R20	Describe the way tasks are allocated and tracked in your project - Use Trello, relationship between tasks and user story's - Add user stories to Trello. 
