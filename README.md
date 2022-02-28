@@ -1,5 +1,8 @@
 # README
 
+### Deployed App
+https://farmers-direct-v2.herokuapp.com/ 
+
 ## Purpose 
 Coles and Woolworths attempt to complete with the low prices of Aldi has seen both businesses focus heavily of 'low prices'. Rather than reduce running costs or reducing operating costs through simplified operating such as Aldi's model, these businesses have used thier buying power and ‘negotiate’ price reductions. This fundamentally reduces our suppliers’ profit and loss to theirs
 
