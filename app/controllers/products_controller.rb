@@ -12,7 +12,11 @@ class ProductsController < ApplicationController
     end
 
     def new
-        @products = Product.new
+        
+    end
+
+    def create
+  
     end
     
     class Product 

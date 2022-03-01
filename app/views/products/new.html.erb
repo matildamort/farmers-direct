@@ -1,0 +1,14 @@
+<H1> Add a new product </H1>
+
+<%= form_with model: @product do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+    <%= f.label :inventory %>
+    <%= f.number_field :inventory %>
+    <%= f.submit %>
+<% end %>
