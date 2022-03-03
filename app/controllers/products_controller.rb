@@ -4,6 +4,15 @@ class ProductsController < ApplicationController
     #before_action :authenticate_user! , only: [:new, :create]
     #before_action :isFarmer [:new, :create, 
 
+
+    before_action find_params 
+
+    def find_params
+        @product = Product.find(params[:id])
+    end
+
+
+
     def index
         @products = Product.all
     
