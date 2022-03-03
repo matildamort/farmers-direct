@@ -1,6 +1,6 @@
 
 
-<%= image_tag product.productpic if product.productpic.attached? %>
+<%= image_tag @product.productpic if @product.productpic.attached? %>
 <h3><%= @product.name %></h3>
 <p><%= @product.description %></p>
 <p>$<%= @product.price %></p>
@@ -9,10 +9,11 @@
 
 
 
-<%= link_to "Update", edit_product_path(@product.id) %>
 
-<%= link_to "Remove product listing", @product, method 'delete', data: {confirm: 'Please confrim you want to permanently remove?'} %>
-<% end %>
+
+
+<%= link_to "Destroy", product_path(@product), method: :delete, data: {confirm: "Are you sure?"} %>
+
 
 
 

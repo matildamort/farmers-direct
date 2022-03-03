@@ -10,8 +10,9 @@ Rails.application.routes.draw do
   post '/products', to: "products#create"
   
   #Send back product to client
-  get '/products/:id', to: "products#show", as: 'product'
+  get '/products/:id', to: "products#show"
   
+  delete '/products/:id' => 'products#destroy'
 
 
 

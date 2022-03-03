@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
     #before_action :isFarmer [:new, :create, :edit, :update, :destroy]
 
 
+
     def index
         @products = Product.all
     
@@ -24,12 +25,19 @@ class ProductsController < ApplicationController
        
     end
 
-    def delete
-
+    def destroy     
+        @product = Product.find(params[:id])   
+        @product.destroy
+        redirect_to root_path, notice: "#{@product.name} was removed from product range"
     end
 
     def edit
     
+    end
+
+    def update
+        @product.update(product_params)
+        redirect_to @product, notice: "#{@product.name} updated"
     end
 
 
