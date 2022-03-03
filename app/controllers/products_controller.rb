@@ -2,9 +2,7 @@ class ProductsController < ApplicationController
 
     #before_action :find_product, only:[:show, :edit, :update, :destroy]
     #before_action :authenticate_user! , only: [:new, :create]
-    #before_action :isFarmer [:new, :create, :edit, :update, :destroy]
-
-
+    #before_action :isFarmer [:new, :create, 
 
     def index
         @products = Product.all
@@ -32,20 +30,19 @@ class ProductsController < ApplicationController
     end
 
     def edit
-    
+        @product = Product.find(params[:id])
     end
 
     def update
+        @product = Product.find(params[:id])
         @product.update(product_params)
         redirect_to @product, notice: "#{@product.name} updated"
     end
-
 
     def product_params
         params.require(:product).permit(:name, :description, :price, :stock, :productpic, :user_id)
     end
 
-    
 
     def isFarmer
         if !current_user.farmer or !current_user.admin
