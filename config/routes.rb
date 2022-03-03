@@ -5,9 +5,14 @@ Rails.application.routes.draw do
   root to: "products#index"
   get '/products/', to: "products#index"
   get '/products/new', to: "products#new"
-  get '/products/:id', to: "products#show"
 
-  post '/products/new', to: "products#create"
+  #Posting to array
+  post '/products', to: "products#create"
+  
+  #Send back product to client
+  get '/products/:id', to: "products#show", as: 'product'
+  
+
 
 
 end
