@@ -1,6 +1,15 @@
 
 
+<h1> Our Farmers </h1>
 
-<h3><%= @farmer.name %></h3>
-<p><%= @farmer.description %></p>
+
+        <% @farmers.each do |farmer| %>
+        
+        <h3><%=link_to farmer.name, farmer_path(farmer.id) %></h3>
+        <p>Business Name: <%=farmer.name %></p>
+        <p>About this farmer: <%=farmer.about%></p>
+
+
+        <% end %>
+
 

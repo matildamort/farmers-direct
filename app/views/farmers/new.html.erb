@@ -2,21 +2,16 @@
 
 <%= form_with model: @farmer do |form| %>
 
-<%= form.label :business_name %>
+<%= form.label :farm_name %>
 <%= form.text_field :name %>
 
-<%= form.label :about %>
-<%= form.text_field :description  %>
+<%= form.label :about_your_farm %>
+<%= form.text_field :about  %>
 
 <%= form.label :abn %>
-<%= form.text_field :abn
-
-<%= form.label :stock %>
-<%= form.number_field :stock %>
+<%= form.text_field :abn%>
 
 <%= form.hidden_field :user_id, value: current_user.id%>
-
-
 
 <%= form.submit "submit" %>
 

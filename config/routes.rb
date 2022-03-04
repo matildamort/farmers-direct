@@ -14,7 +14,13 @@ Rails.application.routes.draw do
   
   delete '/products/:id' => 'products#destroy'
 
-  get '/farmers/', to: "farmers#index"
+
+
+  get '/farmers', to: "farmers#index"
+  get '/farmers/new', to: "farmers#new"
+  post '/farmers', to: "farmers#create"
+  get '/farmers/:id', to: "farmers#show", as: "farmer"
+  
 
 
 end

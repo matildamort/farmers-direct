@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
     #before_action :authenticate_user! , only: [:new, :create]
     #before_action :isFarmer [:new, :create, 
 
-#before_action :params_find , only: 
+    before_action :params_find , only: [:show, :edit, :update, :destroy]
 
 
 
@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
     end
 
     def show 
-        @product = Product.find(params[:id])
+        
     end
 
     def create
@@ -28,17 +28,14 @@ class ProductsController < ApplicationController
     end
 
     def destroy     
-        @product = Product.find(params[:id])   
         @product.destroy
         redirect_to root_path, notice: "#{@product.name} was removed from product range"
     end
 
     def edit
-        @product = Product.find(params[:id])
     end
 
     def update
-        @product = Product.find(params[:id])
         @product.update(product_params)
         redirect_to @product, notice: "#{@product.name} updated"
     end
@@ -46,7 +43,10 @@ class ProductsController < ApplicationController
     def product_params
         params.require(:product).permit(:name, :description, :price, :stock, :productpic, :user_id)
     end
-
+    
+    def params_find
+        @product = Product.find(params[:id])
+    end
 
     def isFarmer
         if !current_user.farmer or !current_user.admin
