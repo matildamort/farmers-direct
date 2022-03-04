@@ -3,6 +3,8 @@
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
+   
+
 <section class="vh-150" style="background-color: #228B22">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -27,15 +29,16 @@
                   </div>
 
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Register your account</h5>
-
+                  
                   <div class="form-outline mb-4">
                     <%= f.input :email,
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "email" }, class:"form-control form-control-lg" %>
                   </div>
-         
 
+                  
+         
                   <div class="form-outline mb-4">
                    <%= f.input :password,
                     required: true,
@@ -67,7 +70,9 @@
     </div>
   </div>
 </section>
+ 
 
 <% end %>
+
 
 
