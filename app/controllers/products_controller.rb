@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
     #before_action :authenticate_user! , only: [:new, :create]
     #before_action :isFarmer [:new, :create, 
 
+#before_action :params_find , only: 
 
 
 

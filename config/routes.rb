@@ -10,10 +10,11 @@ Rails.application.routes.draw do
   post '/products', to: "products#create"
   
   #Send back product to client
-  get '/products/:id', to: "products#show"
+  get '/products/:id', to: "products#show", as: "product"
   
   delete '/products/:id' => 'products#destroy'
 
+  get '/farmers/', to: "farmers#index"
 
 
 end

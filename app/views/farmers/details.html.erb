@@ -1,0 +1,23 @@
+<H1> Please complete your page </H1>
+
+<%= form_with model: @farmer do |form| %>
+
+<%= form.label :business_name %>
+<%= form.text_field :name %>
+
+<%= form.label :about %>
+<%= form.text_field :description  %>
+
+<%= form.label :abn %>
+<%= form.text_field :abn
+
+<%= form.label :stock %>
+<%= form.number_field :stock %>
+
+<%= form.hidden_field :user_id, value: current_user.id%>
+
+
+
+<%= form.submit "submit" %>
+
+<%end%>
