@@ -10,7 +10,6 @@ class ProductsController < ApplicationController
 
     def index
         @products = Product.all
-        @order_items = current_order.order_items.new
 
     end
 
@@ -23,7 +22,7 @@ class ProductsController < ApplicationController
     end
 
     def create
-        Product.create(product_params)
+        @product = Product.create(product_params)
         redirect_to products_path
        
     end
@@ -34,6 +33,7 @@ class ProductsController < ApplicationController
     end
 
     def edit
+
     end
 
     def update
@@ -41,9 +41,15 @@ class ProductsController < ApplicationController
         redirect_to @product, notice: "#{@product.name} updated"
     end
 
+
+
+    private 
+
     def product_params
         params.require(:product).permit(:name, :description, :price, :stock, :productpic, :user_id)
     end
+
+        
 
     def params_find
         @product = Product.find(params[:id])

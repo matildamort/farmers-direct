@@ -12,4 +12,4 @@ Product.destroy_all
 
 puts 'Cleaning database...'
 
-p1 = Product.new(name: 'Apples', description:'Super-Delish', price: 2, stock: 4)
+
