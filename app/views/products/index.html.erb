@@ -2,12 +2,18 @@
        <div>  <H1>PRODUCTS</H1>
         
         <% @products.each do |product| %>
-        <%= image_tag product.productpic if product.productpic.attached? %>
-        
-        <h3><%=link_to product.name, product_path(product.id) %></h3>
-        <p>$<%=product.price %></p>
-        <p>Stock:<%=product.stock %></p>
+            <%= image_tag product.productpic if product.productpic.attached? %>
+            
+            <h3><%=link_to product.name, product_path(product.id) %></h3>
+            <p>$<%=product.price %></p>
+            <p>Stock:<%=product.stock %></p>
 
+
+            <%= form_with model: @order_item do |f| %>
+                <%=f.hidden_field :product_id, value: product.id %>
+                <%=f.number_field :quantity, value: 1, min: 1 %>
+                <%=f.submit "Add To Cart" %>
+            <%end%>
 
         <% end %>
          </div>

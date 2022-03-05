@@ -10,7 +10,8 @@ class ProductsController < ApplicationController
 
     def index
         @products = Product.all
-    
+        @order_items = current_order.order_items.new
+
     end
 
     def new
@@ -43,7 +44,7 @@ class ProductsController < ApplicationController
     def product_params
         params.require(:product).permit(:name, :description, :price, :stock, :productpic, :user_id)
     end
-    
+
     def params_find
         @product = Product.find(params[:id])
     end
