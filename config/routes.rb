@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   
 
   root to: "products#index"
+
+
   get '/products/', to: "products#index"
   get '/products/new', to: "products#new"
 
@@ -17,21 +19,16 @@ Rails.application.routes.draw do
   delete '/products/:id' => 'products#destroy'
 
 
-
   get '/farmers', to: "farmers#index"
   get '/farmers/new', to: "farmers#new"
   post '/farmers', to: "farmers#create"
   get '/farmers/:id', to: "farmers#show", as: "farmer"
 
-get '/orders', to: "orders#index"
-get '/orders/new', to: "orders#new"
-post '/orders', to: "orders#create"
-get '/orders/:id', to: "orders#show", as: "order"
 
+resources :orders do 
+  resources :order_items
+end
 
-get '/order_items', to: "order_items#index"
-post '/order_items', to: "order_items#create"
-get '/order_items/:id', to: "order_items#show", as: "order_item"
-get '/order_items', to: "order_items#destroy"
+resources :order_items
 
 end
