@@ -66,4 +66,3 @@ gem 'stripe'
 gem 'simple_form'
 gem 'aws-sdk-s3'
 
-

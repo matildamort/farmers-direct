@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
     #before_action :isFarmer [:new, :create, 
 
     before_action :params_find , only: [:show, :edit, :update, :destroy]
+    
 
 
 
@@ -38,7 +39,7 @@ class ProductsController < ApplicationController
 
     def update
         @product.update(product_params)
-        redirect_to @product, notice: "#{@product.name} updated"
+        redirect_to products_path, notice: "#{@product.name} updated"
     end
 
 

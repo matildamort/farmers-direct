@@ -11,22 +11,22 @@ Rails.application.routes.draw do
   root to: "products#index"
 
 
-  get '/products/', to: "products#index"
-  get '/products/new', to: "products#new"
+  get '/products/' =>  "products#index"
+  get '/products/new' =>  "products#new"
 
   #Posting to array
-  post '/products', to: "products#create"
+  post '/products' => "products#create"
   
   #Send back product to client
-  get '/products/:id', to: "products#show", as: "product"
+  get '/products/:id' => "products#show", as: "product"
   
   delete '/products/:id' => 'products#destroy'
 
 
-  get '/farmers', to: "farmers#index"
-  get '/farmers/new', to: "farmers#new"
-  post '/farmers', to: "farmers#create"
-  get '/farmers/:id', to: "farmers#show", as: "farmer"
+  get '/farmers'  =>  "farmers#index"
+  get '/farmers/new'  =>  "farmers#new"
+  post '/farmers' =>  "farmers#create"
+  get '/farmers/:id' =>  "farmers#show", as: "farmer"
 
   get 'carts/:id' => "carts#show", as: "cart"
   delete 'carts/:id' => "carts#destroy"
@@ -39,15 +39,8 @@ Rails.application.routes.draw do
   
   resources :products
   resources :orders
-
-
-
-
-
-resources :orders do 
   resources :order_items
-end
 
-resources :order_items
+
 
 end

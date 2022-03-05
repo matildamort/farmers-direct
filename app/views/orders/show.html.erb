@@ -1,2 +1,15 @@
 <h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<%= form_for(@order) do |f| %>
+
+    <%= f.hidden_field :user_email, value: current_user.email%>
+
+    <%= f.label :address %><br>
+    <%= f.text_area :address %>
+
+    <%= f.label :delivery_instructions %>
+    <%= f.text_area :delivery %>
+  </p>
+  
+    <%= f.submit %>
+ 
+<% end %>
