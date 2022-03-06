@@ -6,6 +6,7 @@
 <p>$<%= @product.price %></p>
 <p>Stock:<%= @product.stock %></p>
 <p> Seller: How to link this? <%= link_to %>
+<%= button_to "Add #{product.name} to cart", line_items_path(:product_id => product.id) %>
 
 
 
