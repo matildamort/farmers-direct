@@ -1,18 +1,18 @@
 <H1> Add a new product </H1>
 
-<%= form_with model: @product do |f| %>
+<%= form_for(@product) do |f| %>
 
 <%= f.label :name %>
-<%= f.text_field :name, required: true %>
+<%= f.text_field :name %>
 
 <%= f.label :description %>
 <%= f.text_field :description  %>
 
 <%= f.label :price %>
-<%= f.number_field :price, :step => "0.01", required: true %>
+<%= f.number_field :price, :step => "0.01" %>
 
 <%= f.label :stock %>
-<%= f.number_field :stock, required: true%>
+<%= f.number_field :stock %>
 
 <%= f.label :image %>
 <%= f.file_field :productpic, accept: "image/jpg, image/png, image/jpeg " %>
