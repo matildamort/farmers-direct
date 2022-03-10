@@ -13,39 +13,41 @@ class LineItemsController < ApplicationController
           puts "if"
           @line_item = current_cart.line_items.find_by(:product_id => chosen_product)
           @line_item.quantity += 1
-          @line_item.price = chosen_product.price * @line_item.quantity
         else
           puts "else"
           @line_item = LineItem.new
           @line_item.cart = current_cart
           @line_item.product = chosen_product
           @line_item.price = chosen_product.price 
-          #@line_item = LineItem.create()
         end
-      
+        updated_price = current_cart.price + @line_item.price
+        current_cart.update(price: updated_price)
         @line_item.save
         redirect_to cart_path(current_cart)
       end
 
 
       def add_quantity
+        current_cart = @current_cart
         @line_item = LineItem.find(params[:id])
         @line_item.quantity += 1
-        @line_item.price = @line_item.product.price * @line_item.quantity
+        updated_price = current_cart.price + @line_item.price
+        current_cart.update(price: updated_price)
         @line_item.save
         redirect_to cart_path(@current_cart)
       end
       
       def reduce_quantity
+        current_cart = @current_cart
         @line_item = LineItem.find(params[:id])
         if @line_item.quantity > 1
           @line_item.quantity -= 1
-          @line_item.price = @line_item.product.price * @line_item.quantity
         end
+        updated_price = current_cart.price - @line_item.price
+        current_cart.update(price: updated_price)
         @line_item.save
         redirect_to cart_path(@current_cart)
       end
-
       
       private
         def line_item_params
