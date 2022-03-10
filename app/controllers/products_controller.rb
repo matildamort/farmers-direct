@@ -1,10 +1,7 @@
 class ProductsController < ApplicationController
-
-    #before_action :find_product, only:[:show, :edit, :update, :destroy]
-    #before_action :authenticate_user! , only: [:new, :create]
-    #before_action :isFarmer [:new, :create, 
-
+    before_action :authenticate_user! , only: [:new, :create]
     before_action :params_find , only: [:show, :edit, :update, :destroy]
+    #before_action :isFarmer, only: [:new, :create]
     
 
 
@@ -23,9 +20,13 @@ class ProductsController < ApplicationController
     end
 
     def create
-        @product = Product.create(product_params)
-        redirect_to products_path
-       
+        begin
+            @product = Product.create(product_params)
+            redirect_to products_path, notice: "Your product #{@product.name} is up for sale!"
+            rescue StandardError => e
+                puts e.message
+                redirect_to products_path, notice: "There has been an error, #{@product.name} wasn't created. Please try again or contact support"
+            end
     end
 
     def destroy     
@@ -58,6 +59,7 @@ class ProductsController < ApplicationController
 
     def isFarmer
         if !current_user.farmer or !current_user.admin
+
             redirect_to products_path, alert: "You must be a registered farmer to add a product"
         end
     end

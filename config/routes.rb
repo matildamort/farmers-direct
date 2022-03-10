@@ -1,15 +1,8 @@
 Rails.application.routes.draw do
-  get 'orders/index'
-  get 'orders/show'
-  get 'orders/new'
-  get 'carts/show'
-  devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  
-  
 
   root to: "products#index"
 
+  devise_for :users
 
   get '/products/' =>  "products#index"
   get '/products/new' =>  "products#new"
@@ -21,8 +14,7 @@ Rails.application.routes.draw do
   get '/products/:id' => "products#show", as: "product"
   
   delete '/products/:id' => 'products#destroy'
-
-
+  
   get '/farmers'  =>  "farmers#index"
   get '/farmers/new'  =>  "farmers#new"
   post '/farmers' =>  "farmers#create"

@@ -11,6 +11,9 @@
     <%= f.label :address %><br>
     <%= f.text_area :address %>
   </p>
+
+  <%= f.hidden_field :price, value: @line_item.price %>
+
   <p>
     <%= f.submit %>
   </p>
