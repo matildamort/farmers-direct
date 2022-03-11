@@ -5,9 +5,7 @@ class LineItemsController < ApplicationController
   def create
      
         chosen_product = Product.find(params[:product_id])
-        puts "name #{chosen_product.name}"
         current_cart = @current_cart
-        puts "cart #{current_cart}"
     
         if current_cart.products.include?(chosen_product)
           puts "if"

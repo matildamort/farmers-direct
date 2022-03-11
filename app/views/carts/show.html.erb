@@ -5,6 +5,7 @@
     <p>Product: <%= line_item.product.name %> </p>
     <p>Price per item: <%= number_to_currency(line_item.product.price) %></p>
     <p>Quantity: <%= line_item.quantity %></p>
+  
    
         <%= link_to "Add one", line_item_add_path(:id => line_item), method: :post %>
         <%= link_to "Reduce one", line_item_reduce_path(:id => line_item), method: :post %>
