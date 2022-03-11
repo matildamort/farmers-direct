@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2022_03_11_083811) do
   end
 
   create_table "line_items", force: :cascade do |t|
-    t.integer "quantity", default: 1
+    t.integer "quantity", default: 0
     t.float "price"
     t.bigint "product_id", null: false
     t.bigint "cart_id", null: false
