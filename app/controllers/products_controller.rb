@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
     before_action :authenticate_user! , only: [:new, :create]
     before_action :params_find , only: [:show, :edit, :update, :destroy]
-    #before_action :isFarmer, only: [:new, :create]
+    before_action :isFarmer, only: [:new, :create, :edit, :update, :destroy]
+    before_action :check_ownership, only: [:edit, :update, :destroy]
     
 
 
@@ -58,10 +59,14 @@ class ProductsController < ApplicationController
     end
 
     def isFarmer
-        if !current_user.farmer or !current_user.admin
-
-            redirect_to products_path, alert: "You must be a registered farmer to add a product"
+        if !current_user.farmer
+            redirect_to products_path, alert: "You must be a registered farmer to access these pages"
         end
     end
 
+    def check_ownership
+        if !user_signed_in? and (!current_user.admin? or !current_user.id==@product.user_id) 
+        redirect_to products_path, alert: "check ownership"
+        end
+    end
 end

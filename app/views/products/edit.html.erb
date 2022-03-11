@@ -1,22 +1,30 @@
-<%= form_for(@product) do |f| %>
+<div class="d-flex justify-content-center">
+    <%= form_for(@product) do |f| %>
+    <div class="mt-4 form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control"  %>
+    </div>
+    <div class="mt-4 form-group">
+        <%= f.label :description %>
+        <%= f.text_field :description, class: "form-control"   %>
+    </div>
+    <div class="mt-4 form-group">
+        <%= f.label :price %>
+        <%= f.number_field :price, :step => "0.05", class: "form-control"  %>
+    </div>
+    <div class="mt-4 form-group">
+        <%= f.label :stock %>
+        <%= f.number_field :stock, class: "form-control"  %>
+    </div>
+    <div class="mt-4 form-group">
+        <%= f.label :image %>
+        <%= f.file_field :productpic, accept: "image/jpg, image/png, image/jpeg ", class: "form-control"  %>
+    </div>
 
-<%= f.label :name %>
-<%= f.text_field :name %>
+    <%= f.hidden_field :user_id, value: current_user.id%>
+    <div class="mt-4 form-group">
+        <%= f.submit "submit" %>
+    </div>
 
-<%= f.label :description %>
-<%= f.text_field :description  %>
-
-<%= f.label :price %>
-<%= f.number_field :price, :step => "0.05" %>
-
-<%= f.label :stock %>
-<%= f.number_field :stock %>
-
-<%= f.label :image %>
-<%= f.file_field :productpic, accept: "image/jpg, image/png, image/jpeg " %>
-
-<%= f.hidden_field :user_id, value: current_user.id%>
-
-<%= f.submit "submit" %>
-
-<%end%>
+    <%end%>
+</div>

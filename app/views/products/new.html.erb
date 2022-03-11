@@ -1,26 +1,35 @@
+
 <H1> Add a new product </H1>
-
+<div class="d-flex justify-content-center">
 <%= form_for(@product) do |f| %>
+ <div class="mt-4 form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+</div>
 
-<%= f.label :name %>
-<%= f.text_field :name %>
+<div class="mt-4 form-group">
+    <%= f.label :description %>
+    <%= f.text_field :description, class: "form-control"%>
+</div>
 
-<%= f.label :description %>
-<%= f.text_field :description  %>
-
+<div class="mt-4 form-group">
 <%= f.label :price %>
-<%= f.number_field :price, :step => "0.05" %>
-
+<%= f.number_field :price, :step => "0.05", class: "form-control" %>
+</div>
+<div class="mt-4 form-group">
 <%= f.label :stock %>
-<%= f.number_field :stock %>
-
+<%= f.number_field :stock, class: "form-control" %>
+</div>
+<div class="mt-4 form-group">
 <%= f.label :image %>
-<%= f.file_field :productpic, accept: "image/jpg, image/png, image/jpeg " %>
+<%= f.file_field :productpic, accept: "image/jpg, image/png, image/jpeg ", class: "form-control" %>
+</div>
 
 <%= f.hidden_field :user_id, value: current_user.id%>
 
 
-
-<%= f.submit "submit" %>
-
+<div class="mt-4 form-group">
+<%= f.submit "submit", class:"btn btn-success" %>
+</div>
 <%end%>
+</div>
