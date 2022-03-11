@@ -68,3 +68,4 @@ gem 'aws-sdk-s3'
 gem 'image_optim', '~> 0.31.1'
 gem 'image_processing'
 gem 'dotenv-rails', :groups => [:developement, :test]
+

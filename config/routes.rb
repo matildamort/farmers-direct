@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   resources :products
   resources :orders
   resources :line_items
+  resources :type
 
 
 end

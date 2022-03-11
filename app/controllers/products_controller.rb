@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
             redirect_to products_path, notice: "Your product #{@product.name} is up for sale!"
             rescue StandardError => e
                 puts e.message
-                redirect_to products_path, notice: "There has been an error, #{@product.name} wasn't created. Please try again or contact support"
+                redirect_to products_path, notice: "There has been an error, your product wasn't created. Please try again or contact support"
             end
     end
 
@@ -49,7 +49,7 @@ class ProductsController < ApplicationController
     private 
 
     def product_params
-        params.require(:product).permit(:name, :description, :price, :stock, :productpic, :user_id)
+        params.require(:product).permit(:name, :description, :price, :stock, :productpic, :category, :user_id)
     end
 
         

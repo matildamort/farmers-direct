@@ -1,29 +1,38 @@
 
 <H1> Add a new product </H1>
 <div class="d-flex justify-content-center">
-<%= form_for(@product) do |f| %>
+<%= form_with model: @product do |f| %>
  <div class="mt-4 form-group">
     <%= f.label :name %>
-    <%= f.text_field :name, class: "form-control" %>
+    <%= f.text_field :name, class: "form-control", required: true %>
 </div>
 
 <div class="mt-4 form-group">
     <%= f.label :description %>
-    <%= f.text_field :description, class: "form-control"%>
+    <%= f.text_field :description, class: "form-control", required: true%>
 </div>
 
 <div class="mt-4 form-group">
 <%= f.label :price %>
-<%= f.number_field :price, :step => "0.05", class: "form-control" %>
+<%= f.number_field :price, :step => "0.05", class: "form-control", required: true%>
 </div>
 <div class="mt-4 form-group">
 <%= f.label :stock %>
-<%= f.number_field :stock, class: "form-control" %>
+<%= f.number_field :stock, class: "form-control",required: true %>
 </div>
+
+
+
 <div class="mt-4 form-group">
 <%= f.label :image %>
-<%= f.file_field :productpic, accept: "image/jpg, image/png, image/jpeg ", class: "form-control" %>
+<%= f.file_field :productpic, accept: "image/jpg, image/png, image/jpeg ", class: "form-control", required: true %>
 </div>
+
+<div class="mt-4 "dropdown-menu"">
+<%= f.label :category %>
+<%= f.select :category, [['Fruit','Fruit'],['Vegetable','Vegetable'],['Meat','Meat'],['Dairy','Dairy'],['Pantry','Pantry']],class: "dropdown-item", required: true %>
+</div>
+
 
 <%= f.hidden_field :user_id, value: current_user.id%>
 
