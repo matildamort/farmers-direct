@@ -1,1 +1,9 @@
-<H1> Your farmer page </H1>
+
+        <%= image_tag @farmer.photo.representation if @farmer.photo.attached? %>
+        <h3>Business Name: <%=@farmer.name%></h3>
+        <p>About this farmer: <%=@farmer.about%></p>
+      
+        
+          
+    
+          

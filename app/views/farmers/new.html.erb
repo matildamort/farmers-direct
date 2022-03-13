@@ -1,6 +1,6 @@
 <H1> Please complete your page </H1>
 
-<%= form_with model: @farmer do |form| %>
+<%= form_for (@farmer) do |form| %>
 
 <%= form.label :farm_name %>
 <%= form.text_field :name %>
@@ -11,8 +11,13 @@
 <%= form.label :abn %>
 <%= form.text_field :abn%>
 
+<div class="photos">
+  <%= form.label :photo %>
+  <%= form.file_field :photo, accept: "image/jpg, image/png, image/jpeg ", class: "form-control", required: true %>
+</div>
+
 <%= form.hidden_field :user_id, value: current_user.id%>
 
 <%= form.submit "submit" %>
 
-<%end%>
+<% end %>
