@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
     before_action :authenticate_user! , only: [:new, :create]
-    before_action :params_find , only: [:show, :edit, :update, :destroy ]
+    before_action :params_find , only: [:show, :edit, :update, :destroy]
     before_action :isFarmer, only: [:new, :create, :edit, :update, :destroy]
     before_action :check_ownership, only: [:edit, :update, :destroy]
     
@@ -9,7 +9,8 @@ class ProductsController < ApplicationController
 
     def index
         @products = Product.all
-
+        @fruits = Product.where(category: "Fruit")
+        
     end
 
     def about
@@ -42,6 +43,11 @@ class ProductsController < ApplicationController
 
     end
 
+    def fruit
+        @fruits = Product.where(category: "Fruit")
+    end
+
+
     def myproduct
         @products = Product.all
     end
@@ -58,18 +64,18 @@ class ProductsController < ApplicationController
         params.require(:product).permit(:name, :description, :price, :stock, :productpic, :category, :user_id)
     end
 
-def search 
-    if params[:search].blank?
-        redirect_to products_path, alert: "No products match your search" and return
-    else
-        @parameter = params[:search].downcase
-    @results = Products.all.where("lower(name) LIKE :search", search: "%#{@parameter}%")
-    end
-end
+#def search 
+    #if params[:search].blank?
+     #   redirect_to products_path, alert: "No products match your search" and return
+    #else
+       # @parameter = params[:search].downcase
+   # @results = Products.all.where("lower(name) LIKE :search", search: "%#{@parameter}%")
+    #end
+#end
 
 
 
-    def find_product
+    def search
         begin
             @product = Product.find(params[:id])
         rescue StandardError => e
@@ -79,6 +85,7 @@ end
         end
     end
 
+  
         
 
     def params_find

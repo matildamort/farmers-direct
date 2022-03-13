@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get '/products/' =>  "products#index"
   get '/products/new' =>  "products#new"
+  get '/products/fruit' => "products#fruit"
 
   #Posting to array
   post '/products' => "products#create"
