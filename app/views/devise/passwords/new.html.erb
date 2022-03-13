@@ -1,18 +1,54 @@
-<h2>Forgot your password?</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions", class: "btn btn-success" %>
+
+
+<section class="vh-150">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1em;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <%= image_tag "pexels-anna-shvets-5027618.jpg",
+                alt:"login form",
+                class:"img-fluid", style:"border-radius: 1rem 0 0 1rem;"
+              %>
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+
+                <form>
+
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+
+                    <span class="h1 fw-bold mb-0">Forgot your password?</span>
+                  </div>
+                  
+                  <div class="form-outline mb-4">
+
+                    <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      placeholder: "Email",
+                      input_html: { autocomplete: "email" }, 
+                      class:"form-control form-control-lg"  %>
+                  </div>
+
+                  <div class="pt-1 mb-4">
+                   <%= f.button :submit, "Reset", class: "btn btn-dark btn-lg btn-block"  %>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
 <% end %>
-
-<%= render "devise/shared/links" %>

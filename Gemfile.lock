@@ -212,6 +212,7 @@ GEM
       rake (>= 0.13)
       thor (~> 1.0)
     rake (13.0.6)
+    ranker (1.1.4)
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -320,6 +321,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.6)
   rails-controller-testing
+  ranker
   rspec-rails
   sass-rails (>= 6)
   selenium-webdriver

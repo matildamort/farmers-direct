@@ -1,24 +1,32 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   root to: "products#index"
 
-  devise_for :users
+ 
 
   get '/products/' =>  "products#index"
   get '/products/new' =>  "products#new"
 
   #Posting to array
   post '/products' => "products#create"
+  get '/products/myproduct' => "products#myproduct"
   
   #Send back product to client
   get '/products/:id' => "products#show", as: "product"
+  get '/products' => "products#about"
   
   delete '/products/:id' => 'products#destroy'
+
+
   
   get '/farmers'  =>  "farmers#index"
   get '/farmers/new'  =>  "farmers#new"
   post '/farmers' =>  "farmers#create"
   get '/farmers/:id' =>  "farmers#show", as: "farmer"
+  get '/search', to: "products#search"
+  post '/search', to: "products#search"
+
 
   get 'carts/:id' => "carts#show", as: "cart"
   delete 'carts/:id' => "carts#destroy"
