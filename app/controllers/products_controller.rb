@@ -47,6 +47,19 @@ class ProductsController < ApplicationController
         @fruits = Product.where(category: "Fruit")
     end
 
+    def vegetable
+    end
+
+    def meat
+    end
+
+    def dairy
+    end
+
+    def pantry
+    end
+
+
 
     def myproduct
         @products = Product.all

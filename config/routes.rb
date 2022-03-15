@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   get '/products/' =>  "products#index"
   get '/products/new' =>  "products#new"
   get '/products/fruit' => "products#fruit"
+  get '/products/vegetable' => "products#vegetable"
+  get '/products/meat' => "products#meat"
+  get '/products/dairy' => "products#dairy"
+  get '/products/pantry' => "products#pantry"
 
   #Posting to array
   post '/products' => "products#create"
