@@ -1,5 +1,6 @@
 class LineItemsController < ApplicationController
   before_action :authenticate_user!
+  before_action :line_item_cruds, only: [:add_quantity, :reduce_quantity, :destroy]
 
   def new
     @line_item = LineItem.new
@@ -25,29 +26,18 @@ class LineItemsController < ApplicationController
           @line_item.product = chosen_product
           @line_item.price = chosen_product.price 
         end
-        updated_price = current_cart.price + @line_item.price
-        current_cart.update(price: updated_price)
-        @line_item.save
-        redirect_to cart_path(current_cart)
+        cart_update_increase
       end
 
       def add_quantity
-        current_cart = @current_cart
-        @line_item = LineItem.find(params[:id])
         @line_item.quantity += 1
-        updated_price = current_cart.price + @line_item.price
-        current_cart.update(price: updated_price)
-        @line_item.save
-        redirect_to cart_path(@current_cart)
+        cart_update_increase 
       end
       
       def reduce_quantity
-        current_cart = @current_cart
-        @line_item = LineItem.find(params[:id])
         if @line_item.quantity >= 1
           @line_item.quantity -= 1
-          updated_price = current_cart.price - @line_item.price
-          current_cart.update(price: updated_price)
+          cart_update_reduce
         else
           @line_item.quantity == 0
         end
@@ -56,20 +46,35 @@ class LineItemsController < ApplicationController
       end
 
       def destroy
-        current_cart = @current_cart
-        @line_item = LineItem.find(params[:id])
+
        if @line_item.present?
         @line_item.price = @line_item.price * @line_item.quantity
         @line_item.destroy
-        updated_price = current_cart.price - @line_item.price
-        current_cart.update(price: updated_price)
-        redirect_to cart_path(current_cart)
+        cart_update_reduce
+        redirect_to cart_path(@current_cart)
       end
     end
 
       private
         def line_item_params
           params.require(:line_item).permit(:quantity, :product_id, :cart_id)
+        end
+
+        def line_item_cruds
+          current_cart = @current_cart
+          @line_item = LineItem.find(params[:id])
+        end
+
+        def cart_update_reduce
+          updated_price = @current_cart.price - @line_item.price
+          @current_cart.update(price: updated_price)
+        end
+
+        def cart_update_increase
+        updated_price = @current_cart.price + @line_item.price
+        @current_cart.update(price: updated_price)
+        @line_item.save
+        redirect_to cart_path(@current_cart)
         end
 
         
