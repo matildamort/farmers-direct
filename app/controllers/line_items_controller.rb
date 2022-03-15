@@ -56,10 +56,17 @@ class LineItemsController < ApplicationController
       end
 
       def destroy
-        @cart = Cart.find(session[:cart_id])
+        current_cart = @current_cart
+        @line_item = LineItem.find(params[:id])
+       if @line_item.present?
+        @line_item.price = @line_item.price * @line_item.quantity
         @line_item.destroy
+        updated_price = current_cart.price - @line_item.price
+        current_cart.update(price: updated_price)
+        redirect_to cart_path(current_cart)
       end
-      
+    end
+
       private
         def line_item_params
           params.require(:line_item).permit(:quantity, :product_id, :cart_id)
