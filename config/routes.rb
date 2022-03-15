@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get '/products/' =>  "products#index"
   get '/products/new' =>  "products#new"
+  post '/products' => "products#create"
   get '/products/fruit' => "products#fruit"
   get '/products/vegetable' => "products#vegetable"
   get '/products/meat' => "products#meat"
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
   get '/products/pantry' => "products#pantry"
 
   #Posting to array
-  post '/products' => "products#create"
+  
   get '/products/myproduct' => "products#myproduct"
   
   #Send back product to client
