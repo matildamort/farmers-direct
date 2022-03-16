@@ -1,11 +1,9 @@
 
-       
-        <% @farmers.photo.each do |farmer| %>
-        <%= image_tag @farmer.photo.representation if @farmer.photo.attached? %>
-        <%end%>
-        <h3>Business Name: <%=@farmer.name%></h3>
-        <p>About this farmer: <%=@farmer.about%></p>
-      
+
+        <%= image_tag @farmers.photos if @farmers.photos.attached? %>
+        <h3>Business Name: <%=@farmers.name%></h3>
+        <p>About this farmer: <%=@farmers.about%></p>
+        
         
           
     

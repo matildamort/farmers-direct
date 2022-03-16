@@ -27,11 +27,13 @@ class LineItemsController < ApplicationController
           @line_item.price = chosen_product.price 
         end
         cart_update_increase
+        redirect
       end
 
       def add_quantity
         @line_item.quantity += 1
         cart_update_increase 
+        redirect
       end
       
       def reduce_quantity
@@ -42,7 +44,7 @@ class LineItemsController < ApplicationController
           @line_item.quantity == 0
         end
         @line_item.save
-        redirect_to cart_path(@current_cart)
+        redirect
       end
 
       def destroy
@@ -51,7 +53,7 @@ class LineItemsController < ApplicationController
         @line_item.price = @line_item.price * @line_item.quantity
         @line_item.destroy
         cart_update_reduce
-        redirect_to cart_path(@current_cart)
+        redirect
       end
     end
 
@@ -74,7 +76,10 @@ class LineItemsController < ApplicationController
         updated_price = @current_cart.price + @line_item.price
         @current_cart.update(price: updated_price)
         @line_item.save
-        redirect_to cart_path(@current_cart)
+        end
+        
+        def redirect
+          redirect_to cart_path(@current_cart)
         end
 
         

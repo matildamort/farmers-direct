@@ -1,6 +1,6 @@
 class FarmersController < ApplicationController
 
-    before_action :params_farmer, only: [:update, :edit, :show]
+    before_action :params_find, only: [:show, :update, :edit]
     before_action :farmer_params, only: [:create]
 
     def index
@@ -18,7 +18,7 @@ class FarmersController < ApplicationController
     end
 
     def create
-        Farmer.create(farmer_params)
+        @farmers = Farmer.create(farmer_params)
         redirect_to farmers_path
 
         #   the above redirect path needs to be fixed.
@@ -30,12 +30,12 @@ class FarmersController < ApplicationController
         redirect_to @farmers, notice: "Details updated"
     end
 
-    def params_farmer
-        @farmer = Farmer.find(params[:id])
+    def params_find
+        @farmers = Farmer.find(params[:id])
     end
 
     def farmer_params
-        params.require(:farmer).permit(:name, :about, :abn, :user_id, :photo =>[])
+        params.require(:farmer).permit(:name, :about, :abn, :user_id, :photos)
     end
 
 

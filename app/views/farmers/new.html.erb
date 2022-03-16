@@ -11,9 +11,10 @@
 <%= form.label :abn %>
 <%= form.text_field :abn%>
 
+
 <div class="photos">
   <%= form.label :photo %>
-  <%= form.file_field :photo, accept: "image/jpg, image/png, image/jpeg ", class: "form-control", required: true %>
+  <%= form.file_field :photos, accept: "image/jpg, image/png, image/jpeg ", class: "form-control", multiple: "true" %>
 </div>
 
 <%= form.hidden_field :user_id, value: current_user.id%>
