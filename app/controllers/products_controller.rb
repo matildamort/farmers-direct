@@ -73,6 +73,29 @@ class ProductsController < ApplicationController
         redirect_to products_path, notice: "#{@product.name} updated"
     end
 
+    def search 
+        puts "something"
+        if params[:search].blank?
+           redirect_to products_path, alert: "No products match your search" and return
+        else
+            @parameter = params[:search].downcase
+            puts "else"
+        @products = Product.all.where("lower(name) LIKE :search", search: "%#{@parameter}%")
+        end
+    end
+
+
+    #     def search
+    #     begin
+    #         @results = Product.find(params[:name].downcase)
+    #         products_search_path
+    #     rescue StandardError => e
+    #         puts e.message
+    #         #flash[:error] = e.message
+    #         redirect_to products_path, alert: "No products match your search"
+    #     end
+    # end
+
 
     private 
 
@@ -80,17 +103,7 @@ class ProductsController < ApplicationController
         params.require(:product).permit(:name, :description, :price, :stock, :productpic, :category, :user_id)
     end
 
-def search 
-    puts "something"
-    if params[:search].blank?
-        puts "if"
-       redirect_to products_path, alert: "No products match your search" and return
-    else
-        @parameter = params[:search].downcase
-        puts "else"
-    @results = Products.all.where("lower(name) LIKE :search", search: "%#{@params}%")
-    end
-end
+
 
 
 

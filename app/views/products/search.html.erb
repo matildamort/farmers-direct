@@ -1,6 +1,32 @@
 <h1> Search Results <h1>
 
-<% @results.each do |result| %>
+<% @products.each do |product| %>
 
-<%= @result.name %>
-<% end %>
+
+             <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <%= image_tag product.productpic.representation(resize_to_limit: [190, 160]).processed, :crop => :fill if product.productpic.attached? %>
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder"><%=product.name%></h5>
+                                    <!-- Product price-->
+                                   <p>$<%=product.price %></p>
+                                </div>
+                            </div>
+                        
+            
+                            <div class="text-center"><%= button_to "add to cart", line_items_path(:product_id => product.id), :class => "btn btn-outline-dark mt-auto" %>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% end %>
