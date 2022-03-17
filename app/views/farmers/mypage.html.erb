@@ -1,0 +1,21 @@
+
+
+<% @farmers.each do |farmer| %>
+<% if user_signed_in? and (current_user.admin? or current_user.id==farmer.user_id) %>
+
+        <h3>Business Name: <%=farmer.name%></h3>
+        <p>About this farmer: <%=farmer.about%></p>
+
+
+ <% farmer.photos.each do |photo| %>
+      <% if photo.variable? %>
+       <%= image_tag photo.variant(resize: "400x400") %>
+       <%= link_to 'Remove', delete_photo_farmer_url(photo.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+       <% else %>
+       <%= link_to photo.filename, rails_blob_path(file, disposition: :attachment) %>
+       <%= link_to 'Remove', delete_photo_farmer_url(photo.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+     <% end %>
+    <% end %>
+   <% end %>
+   <% end %>
+ 

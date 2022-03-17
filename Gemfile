@@ -68,4 +68,4 @@ gem 'image_optim', '~> 0.31.1'
 gem 'image_processing'
 gem 'dotenv-rails', :groups => [:developement, :test]
 gem 'ranker'
-
+gem "mini_magick"

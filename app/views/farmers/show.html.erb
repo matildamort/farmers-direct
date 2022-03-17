@@ -1,10 +1,17 @@
 
-
-        <%= image_tag @farmers.photos if @farmers.photos.attached? %>
-        <h3>Business Name: <%=@farmers.name%></h3>
-        <p>About this farmer: <%=@farmers.about%></p>
+<h3>Business Name: <%=@farmers.name%></h3>
+<p>About this farmer: <%=@farmers.about%></p>
         
         
           
-    
+<% if @farmers.photos.any? %>
+   <% @farmers.photos.each do |photo| %>
+     <% if photo.variable? %>
+       <%= image_tag photo.variant(resize: "400x400") %>
+     <% elsif photo.previewable? %>
+     <% else %>
+       <%= link_to photo.filename, rails_blob_path(file, disposition: :attachment) %>
+     <% end %>
+   <% end %>
+ <% end %>
           

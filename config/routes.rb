@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   get '/products/meat' => "products#meat"
   get '/products/dairy' => "products#dairy"
   get '/products/pantry' => "products#pantry"
+  get '/products/search' => "products#search"
+  #get '/search', to: "products#search"
+  #post '/search', to: "products#search"
 
   #Posting to array
   
@@ -29,9 +32,16 @@ Rails.application.routes.draw do
   get '/farmers'  =>  "farmers#index"
   get '/farmers/new'  =>  "farmers#new"
   post '/farmers' =>  "farmers#create"
+  get '/farmers/mypage' => "farmers#mypage"
   get '/farmers/:id' =>  "farmers#show", as: "farmer"
-  get '/search', to: "products#search"
-  post '/search', to: "products#search"
+  get '/farmers/mypage' => "farmers#mypage"
+
+
+  resources :farmers do
+    member do
+      delete :delete_photo
+    end
+  end
 
 
   get 'carts/:id' => "carts#show", as: "cart"

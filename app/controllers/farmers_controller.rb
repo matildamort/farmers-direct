@@ -1,7 +1,8 @@
 class FarmersController < ApplicationController
 
     before_action :params_find, only: [:show, :update, :edit]
-    before_action :farmer_params, only: [:create]
+    before_action :farmer_params, only: [:create ]
+    require "mini_magick"
 
     def index
         @farmers = Farmer.all
@@ -21,8 +22,7 @@ class FarmersController < ApplicationController
         @farmers = Farmer.create(farmer_params)
         redirect_to farmers_path
 
-        #   the above redirect path needs to be fixed.
-       
+        #   the above redirect path needs to be fixed. 
     end
 
     def update
@@ -35,8 +35,18 @@ class FarmersController < ApplicationController
     end
 
     def farmer_params
-        params.require(:farmer).permit(:name, :about, :abn, :user_id, :photos)
+        params.require(:farmer).permit(:name, :about, :abn, :user_id, photos: [])
     end
+
+    def delete_photo
+        photo = ActiveStorage::Attachment.find(params[:id])
+        photo.purge
+        redirect_back(fallback_location: farmers_path)
+      end
+
+      def mypage
+        @farmers = Farmer.all
+      end
 
 
     def isFarmer
