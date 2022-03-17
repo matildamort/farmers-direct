@@ -30,7 +30,8 @@ R11	Description of your marketplace app (website), including:
 - Sitemap
 - Screenshots
 - Target audience
-- Tech stack (e.g. html, css, deployment platform, etc)
+- Tech stack (e.g. html, css, deployment platform, etc) - GEMS used
+npm i bootstrap-icons 
 
 ## Target audience 
 

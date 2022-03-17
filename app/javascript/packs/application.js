@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "trix"
 import "@rails/actiontext"
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 
 Rails.start()

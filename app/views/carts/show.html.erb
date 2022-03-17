@@ -29,7 +29,12 @@
 
  <% end %>
 
+<p> Please note the minimum spend order is $30</p>p>
+
+<% if @current_cart.price >= 30 %>
   <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button"><%= link_to "Proceed to checkout", new_order_path %></button></div>
+  <% end %>
+
 
  <h3>Sub total: <%= number_to_currency(@current_cart.price) %></h3>
 
