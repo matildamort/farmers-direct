@@ -1,14 +1,17 @@
 
 <h1> Our Farmers </h1>
 
-
-        <% @farmers.each do |farmer| %>
-        
-        <h3><%=link_to farmer.name, farmer_path(farmer.id) %></h3>
-        <p>Business Name: <%=farmer.name %></p>
-        <p>About this farmer: <%=farmer.about%></p>
-
-
-        <% end %>
-
-
+<div class="container">
+<div class="row row-cols-1 row-cols-md-3">
+  <% @farmers.each do |farmer| %>
+      <div class="col-md-4 mt-5">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title"> <%=link_to farmer.name, farmer_path(farmer.id) %></h5>
+            <p class="card-text"><%=farmer.about%></p>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
+</div>

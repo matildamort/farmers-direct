@@ -5,7 +5,7 @@
                 <div class="container px-5">
                     <h1 class="masthead-heading mb-0">Gold Coast</h1>
                     <h1 class="masthead-heading mb-0">Farmers Direct</h1>
-                    <h3 class="masthead-subheading mb-0">Supporting our local Gold Coast Farmers</h3>
+                    <h3 class="masthead-subheading mb-0">Supporting our local Farmers</h3>
                 </div>
             </div>
 
@@ -35,18 +35,18 @@
 
 
   
-   <section class="card-columns">
+  <section class="row row-cols-1 row-cols-md-4 d-flex align-self-stretch">
         <% @products.each do |product| %>
        
              <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <div class="col mb-5">
-                        <div class="card h-100">
+                <div class="justify-content-center">
+                    <div class="col-mb-4">
+                        <div class="card shadow-sm">
                             <!-- Product image-->
                             <%= image_tag product.productpic.representation(resize_to_limit: [190, 160]).processed, :crop => :fill if product.productpic.attached? %>
                             <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
+                            <div class="card-body justify-content-center p-4">
+                                <div class="text-center h-100">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder"><%=product.name%></h5>
                                     <!-- Product price-->
@@ -58,6 +58,7 @@
                              <% if user_signed_in? and !current_user.id==!product.user_id %>
                             <div class="text-center"><%= button_to "Add to cart", line_items_path(:product_id => product.id), :class => "btn btn-outline-dark mt-auto" %>
                             <%end%>
+                            <br />
                         
 
                                     <% if user_signed_in? and current_user.admin? %>
