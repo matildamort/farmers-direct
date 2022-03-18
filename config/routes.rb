@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   post '/farmers' =>  "farmers#create"
   get '/farmers/mypage' => "farmers#mypage"
   get '/farmers/:id' =>  "farmers#show", as: "farmer"
-  get '/farmers/mypage' => "farmers#mypage"
+  
 
 
   resources :farmers do
@@ -59,6 +59,7 @@ Rails.application.routes.draw do
   resources :orders
   resources :line_items
   resources :type
+  resources :farmers
 
 
 end

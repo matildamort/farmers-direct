@@ -1,5 +1,3 @@
-
-  <% @cart.line_items.each do |line_item| %>
 <section class="h-100" style="background-color: #eee;">
   <div class="container h-100 py-5">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -9,6 +7,9 @@
           <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
           
         </div>
+        
+  <% @cart.line_items.each do |line_item| %>
+
 
         <div class="card rounded-3 mb-4">
           <div class="card-body p-4">
@@ -22,10 +23,10 @@
                
                <% if line_item.quantity >= 1 %>
 
-                    <%= link_to "-", line_item_reduce_path(:id => line_item), method: :post %>  
+                    <%= link_to " - ", line_item_reduce_path(:id => line_item), method: :post %>  
                     <%end%>
                     <h5 class="text-grey mt-1 mr-1 ml-1"><%= line_item.quantity %></h5><i class="fa fa-plus text-success"></i>
-                    <%= link_to "+", line_item_add_path(:id => line_item), method: :post %>
+                    <%= link_to " + ", line_item_add_path(:id => line_item), method: :post %>
 
                 
               </div>
@@ -44,19 +45,22 @@
   <%end%>
    <h3>Sub total: <%= number_to_currency(@current_cart.price) %></h3>
    <p> Please note the minimum spend order is $30</p>
-   <br/>
    <%= link_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"} %>
+   <br/>
   
-        <div class="card">
-          <div class="card-body">
-          <% if @current_cart.price >= 30 %>
-  <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button"><%= link_to "Proceed to checkout", new_order_path %></button></div>
-  <% end %>
         
+        <% if @current_cart.price >= 30 %>
+    <button class="btn btn-outline-dark mt-3" type="button">
+    <%= link_to "Proceed to checkout", new_order_path %></button></div>
+  <% end %>
           </div>
+          
         </div>
 
       </div>
+      
     </div>
+    
   </div>
+  
 </section>

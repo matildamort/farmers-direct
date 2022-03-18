@@ -35,7 +35,7 @@ class FarmersController < ApplicationController
 
 
     def update
-        @farmer.update(farmer_params)
+        @farmers.update(farmer_params)
         redirect_to @farmers, notice: "Details updated"
     end
 

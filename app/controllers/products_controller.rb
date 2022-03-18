@@ -85,40 +85,12 @@ class ProductsController < ApplicationController
     end
 
 
-    #     def search
-    #     begin
-    #         @results = Product.find(params[:name].downcase)
-    #         products_search_path
-    #     rescue StandardError => e
-    #         puts e.message
-    #         #flash[:error] = e.message
-    #         redirect_to products_path, alert: "No products match your search"
-    #     end
-    # end
-
-
     private 
 
     def product_params
         params.require(:product).permit(:name, :description, :price, :productpic, :category, :user_id)
     end
-
-
-
-
-
-    # def search
-    #     begin
-    #         @product = Product.find(params[:id])
-    #     rescue StandardError => e
-    #         puts e.message
-    #         #flash[:error] = e.message
-    #         redirect_to product_path, alert: "No products match your search"
-    #     end
-    # end
-
-  
-        
+   
 
     def params_find
         @product = Product.find(params[:id])
