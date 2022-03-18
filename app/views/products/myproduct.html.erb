@@ -9,14 +9,14 @@
         </header>
 
 
-<section class="card-columns">
+<section class="row row-cols-1 row-cols-md-4 d-flex align-self-stretch">
    
         <% @products.each do |product| %>
         <% if user_signed_in? and (current_user.admin? or current_user.id==product.user_id) %>
        
-             <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <div class="col mb-5">
+              <div class="container px-4 px-lg-5 mt-5">
+                <div class="justify-content-center">
+                    <div class="col-mb-4">
                         <div class="card h-100">
                             <!-- Product image-->
                             <%= image_tag product.productpic.representation(resize_to_limit: [190, 160]).processed, :crop => :fill if product.productpic.attached? %>

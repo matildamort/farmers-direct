@@ -14,8 +14,9 @@ Rails.application.routes.draw do
   get '/products/dairy' => "products#dairy"
   get '/products/pantry' => "products#pantry"
   get '/products/search' => "products#search"
-  get '/search', to: "products#search"
-  post '/search', to: "products#search"
+  post '/products/search' => "products#search"
+  #get '/search', to: "products#search"
+  #post '/search', to: "products#search"
 
   #Posting to array
   

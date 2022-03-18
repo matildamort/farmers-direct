@@ -1,17 +1,36 @@
 
-<h3>Business Name: <%=@farmers.name%></h3>
-<p>About this farmer: <%=@farmers.about%></p>
-        
-        
-          
-<% if @farmers.photos.any? %>
-   <% @farmers.photos.each do |photo| %>
-     <% if photo.variable? %>
-       <%= image_tag photo.variant(resize: "400x400") %>
-     <% elsif photo.previewable? %>
-     <% else %>
-       <%= link_to photo.filename, rails_blob_path(file, disposition: :attachment) %>
-     <% end %>
-   <% end %>
- <% end %>
-        
+
+
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col">
+      <h1><%=@farmers.name%></h1>
+
+    </div>
+    <div class="col">
+      <p><%=@farmers.about%></p>
+    </div>
+      </div>
+
+<br/>
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+            <% if @farmers.photos.any? %>
+              <% @farmers.photos.each_with_index do |photo, index| %>
+                  <div class="carousel-item <%= index == 0 ? 'active' : ''  %>">
+                    <%= image_tag photo, alt: "website logo", class: "bd-placeholder-img card-img-top pb-5", width: "100%", height:"450" %>
+                  </div>
+                <%end%>
+              <%end%>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" 
+            data-bs-target="#myCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+         
