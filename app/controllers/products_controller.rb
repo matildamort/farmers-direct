@@ -99,11 +99,20 @@ class ProductsController < ApplicationController
     end
 
     def isFarmer
-        if !current_user.admin or !current_user.farmer
+        begin
+        if user_signed_in? and (!current_user.admin? or !current_user.farmer?)
             redirect_to products_path, alert: "You must be a registered farmer to access these pages"
+        else
+        if !user_signed_in?
+            redirect_to products_path, alert: "Please login as a farmer to access this page"
         end
     end
-
+        rescue StandardError => e
+            puts e.message
+            redirect_to products_path, alert: "Please login as a farmer to view"
+        end
+    end
+    
     def check_ownership
         if !user_signed_in? and (!current_user.admin? or !current_user.id==@product.user_id) 
         redirect_to products_path, alert: "check ownership"

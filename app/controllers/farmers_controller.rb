@@ -2,6 +2,8 @@ class FarmersController < ApplicationController
 
     before_action :params_find, only: [:show, :update, :edit ]
     before_action :farmer_params, only: [:create ]
+    before_action :isFarmer, only: [:new, :create, :edit, :update, :mypage]
+    
 
     require "mini_magick"
 
@@ -57,14 +59,20 @@ class FarmersController < ApplicationController
         @farmers = Farmer.all
       end
 
-      
-
-
+    private 
     def isFarmer
-        if !current_user.farmer or !current_user.admin
-            redirect_to user_session_path, alert: "You must be a registered farmer to view this page, sign-in or register"
+        begin
+        if user_signed_in? and (!current_user.admin? or !current_user.farmer?)
+            redirect_to products_path, alert: "You must be a registered farmer to access these pages"
+        else
+        if !user_signed_in?
+            redirect_to products_path, alert: "Please login as a farmer to access this page"
         end
     end
-
+        rescue StandardError => e
+            puts e.message
+            redirect_to products_path, alert: "Please login as a farmer to view"
+        end
+    end
 end
 
