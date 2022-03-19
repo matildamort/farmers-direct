@@ -105,12 +105,12 @@ Explain the different high-level components (abstractions) in your app
 ### Ruby Gems
 This application uses a series of ruby gems that support the functionality of the application.
 
-gem 'devise'
-gem 'bootstrap'
-gem 'jquery-rails'
-gem 'stripe'
-gem 'simple_form'
-gem 'aws-sdk-s3'
+gem 'devise' - Handled almost completely the user sign-up process. 
+gem 'bootstrap' - Handles all styling
+gem 'jquery-rails' - Javascript transpiler to convert JS 
+gem 'stripe' - Supports payment gateway
+gem 'simple_form' - Supports creation of forms and conencts specifically with devise which uses simple form as a standard. 
+gem 'aws-sdk-s3' - Supports the integration of imagery form AWS S3
 gem 'image_optim', '~> 0.31.1'
 gem 'image_processing'
 gem 'dotenv-rails'

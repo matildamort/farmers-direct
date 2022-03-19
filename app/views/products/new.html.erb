@@ -29,7 +29,7 @@
 <%= f.select :category, [['Fruit','Fruit'],['Vegetable','Vegetable'],['Meat','Meat'],['Dairy','Dairy'],['Pantry','Pantry']],class: "dropdown-item", required: true %>
 </div>
 
-
+<!-- pulls user id into database to connect the product to that user -->
 <%= f.hidden_field :user_id, value: current_user.id%>
 
 

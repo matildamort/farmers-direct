@@ -6,6 +6,7 @@ class CartsController < ApplicationController
     @cart = @current_cart
   end
 
+  #Empty's the cart of all items
   def destroy
     @cart = @current_cart
     @cart.destroy

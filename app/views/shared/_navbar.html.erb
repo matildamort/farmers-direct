@@ -3,7 +3,7 @@
 
 <%= link_to'Farmers Direct', root_path, class:"navbar-brand" %>
 
-  <!--Responsive sandwich icon, NOT WORKING! TO FIX TIME PERMIT -->
+  <!--Responsive sandwich icon, NOT WORKING! TO FIX TIME PERMITING -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -13,16 +13,19 @@
     <div class="navbar-nav">
     <%= link_to'Products', root_path, class:"nav-item nav-link active" %>
     <%= link_to'Local-farmers', farmers_path, class:"nav-item nav-link active" %>
+
+     <!-- All users can do these things if they NOT yet signed in -->
     <% if !user_signed_in? %> 
         <%= link_to'Sign-in', user_session_path, class:"nav-item nav-link active" %>
-
-        <!-- Why not linking to sign-up, but linking to sign in? -->
         <%= link_to'Sign-up', new_user_registration_path, class:"nav-item nav-link active" %>
     <% else %>
-
+ <!-- If they are already signed in, only the signout displays -->
       <%=link_to 'Sign Out', destroy_user_session_path, method: 'delete', class:"nav-item 
         nav-link active" %>
-         <% if user_signed_in? and (current_user.admin? or current_user.farmer) %>
+
+
+        <!-- Shows only for admins and farmers -->
+         <% if user_signed_in? and (current_user.admin? or current_user.farmer?) %>
 
           <%= link_to'New Product', products_new_path, class:"nav-item nav-link active" %>
           <%= link_to'My Products', products_myproduct_path, class:"nav-item nav-link active" %>
@@ -33,16 +36,17 @@
     <%end%>
 
 
-
-    <%= form_tag(products_search_path, :method => "get") do %>
+<!-- Search bar, any user can see and use  -->
+  <%= form_tag(products_search_path, :method => "get") do %>
 <div class="input-group rounded">
 <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control rounded"  %>
  <%= button_tag "Product search", :class=> 'btn btn-secondary', :name => nil%>
 
 </div>
 <% end %>
-<% if user_signed_in? %>
 
+<!-- Only displays if the user is signed in. Any user group.  -->
+<% if user_signed_in? %>
  <%= link_to cart_path(@current_cart), class:"nav-item nav-link active" do %>
             <i class="bi bi-cart3" style="font-size: 1.25rem;" ></i>
             <% end %>

@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
 
     private
     
+    #Supports carts controller and makes the cart session based, meaning if user signs out the cart data does not remain.
     def current_cart
       if session[:cart_id]
         cart = Cart.find_by(:id => session[:cart_id])

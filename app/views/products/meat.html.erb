@@ -8,13 +8,14 @@
              <!-- Header-->
         </header>
 
-
+<!-- Renders category menu -->
 <%= render'shared/product_nav' %>
 
  <section class="row row-cols-1 row-cols-md-4 d-flex align-self-stretch">
-  <!-- Prevents a farmer viewing thier own product as a purchaser, farmer can go to thier products page to view thier current products and edit-->
+  <!-- Displays products only from one category -->
         <% @meats.each do |product| %>
            <% if user_signed_in? and current_user.id==product.user_id %>
+           <!-- Prevents a farmer viewing thier own product as a purchaser, farmer can go to thier products page to view thier current products and edit-->
             <%else%>
              <div class="container px-4 px-lg-5 mt-5">
                 <div class="justify-content-center">
@@ -33,8 +34,6 @@
                             </div>
                             <!-- Product actions-->
                             <div class="text-center"><%= button_to "Add to cart", line_items_path(:product_id => product.id), :class => "btn btn-outline-dark mt-auto mb-4" %>
-                           
-
                 
                                     </div>
                             </div>

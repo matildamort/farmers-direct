@@ -4,6 +4,7 @@
   <section class="row card-row-cols-1 row-cols-md-3">
         <% @products.each do |product| %>
         <% if user_signed_in? and current_user.id==product.user_id %>
+        <!-- Prevents a farmer viewing thier own product as a purchaser, farmer can go to thier products page to view thier current products and edit-->
             <%else%>
        
              <div class="container px-4 px-lg-5 mt-5">

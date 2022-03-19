@@ -26,6 +26,8 @@
   <%= form.file_field :photos, accept: "image/jpg, image/png, image/jpeg ", class: "form-control", multiple: "true" %>
 </div>
 
+
+<!-- pulls user id into database to connect the farmer page to that user -->
 <%= form.hidden_field :user_id, value: current_user.id%>
 <br/>
 <%= form.submit "submit", class: "btn btn-secondary" %>

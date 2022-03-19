@@ -3,7 +3,7 @@
 
 
 
-
+<!-- Iterates through all the farmers with the condition that the informatio displayed belongs to that farmer, this page allows the farmer to have a clear view of the details they are displaying to end users and make edits to this, They cannot however delete thier page at present, to be added as future dev. -->
 <% @farmers.each do |farmer| %>
 <% if user_signed_in? and (current_user.admin? or current_user.id==farmer.user_id) %>
 
@@ -24,6 +24,7 @@
       
 
 <br/>
+<!-- Displays all farmers images in a carosole, design not great, requires better design -->
 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
             <% if farmer.photos.any? %>

@@ -8,12 +8,14 @@
              <!-- Header-->
         </header>
 
- 
+ <!-- Displays products only from one category -->
  <%= render'shared/product_nav' %>
 
 <section class="row row-cols-1 row-cols-md-4 d-flex align-self-stretch">
-  <!-- Prevents a farmer viewing thier own product as a purchaser, farmer can go to thier products page to view thier current products and edit-->
+  
+        <!-- Displays products only from one category -->
         <% @dairys.each do |product| %>
+        <!-- Prevents a farmer viewing thier own product as a purchaser, farmer can go to thier products page to view thier current products and edit-->
            <% if user_signed_in? and current_user.id==product.user_id %>
             <%else%>
              <div class="container px-4 px-lg-5 mt-5">
