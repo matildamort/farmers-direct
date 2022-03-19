@@ -1,8 +1,5 @@
 # README
 
-### Deployed App
-https://farmers-direct-v2.herokuapp.com/ 
-
 ## Purpose 
 Coles and Woolworths attempt to complete with the low prices of Aldi has seen both businesses focus heavily of 'low prices'. Rather than reduce running costs or reducing operating costs through simplified operating such as Aldi's model, these businesses have used thier buying power and ‘negotiate’ price reductions. This fundamentally undercuts our farmers. 
 
@@ -27,15 +24,20 @@ https://farmers-direct-v2.herokuapp.com/
 ### GitHub
 https://github.com/matildamort/farmers-direct
 
+### Trello
+https://trello.com/b/MtCNmHtP/farmers-marketplace
+
+
+
 ## Description
 R11	Description of your marketplace app (website), including:
-- Purpose
+
 - Functionality / features
 - Sitemap
 - Screenshots
 - Target audience
 - Tech stack (e.g. html, css, deployment platform, etc) - GEMS used
-npm i bootstrap-icons 
+
 
 ## Target audience 
 
@@ -117,7 +119,11 @@ gem 'dotenv-rails'
 gem 'ranker'
 gem "mini_magick"
 
+npm i bootstrap-icons 
+
 The main 
+
+## Tech Stack
 
 ## Relationship model
 Describe your projects models in terms of the relationships (active record associations) they have with each other

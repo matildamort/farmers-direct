@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
     
 
 
-#Main product page, provides view of all products through instance variable. 
+    #Main product page, provides view of all products through instance variable. 
     def index
         @products = Product.all  
     end
@@ -23,11 +23,13 @@ class ProductsController < ApplicationController
         begin
             @product = Product.create(product_params)
             redirect_to products_path, notice: "Your product #{@product.name} is up for sale!"
-            rescue StandardError => e
-                puts e.message
-                redirect_to products_path, notice: "There has been an error, your product wasn't created. Please try again or contact support"
-            end
+        rescue StandardError => e
+            puts e.message
+            redirect_to products_path, notice: "There has been an error, your product wasn't created. Please try again or contact support"
+        end
     end
+
+    
     # Allows farmers and admins to delete products
     def destroy     
         @product.destroy

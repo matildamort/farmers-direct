@@ -1,34 +1,37 @@
 <br/>
 <div class="d-flex justify-content-center">
-<H1> Edit your farm</H1>
+  <H1> Edit your farm</H1>
 </div>
 
 <div class="d-flex justify-content-center">
 
+  <%= form_for (@farmers) do |form| %>
+    <div class="mt-4 form-group">
+      <%= form.label :farm_name %>
+      <%= form.text_field :name, class: "form-control", required: true %>
+    </div>
 
-<%= form_for (@farmers) do |form| %>
-<div class="mt-4 form-group">
-<%= form.label :farm_name %>
-<%= form.text_field :name, class: "form-control", required: true %>
-</div>
-<div class="mt-4 form-group">
-<%= form.label :about_your_farm %>
-<%= form.text_field :about, class: "form-control", required: true  %>
-</div>
-<div class="mt-4 form-group">
-<%= form.label :ABN %>
-<%= form.text_field :abn, class: "form-control", required: true%>
-</div>
+    <div class="mt-4 form-group">
+      <%= form.label :about_your_farm %>
+      <%= form.text_field :about, class: "form-control", required: true  %>
+    </div>
+
+    <div class="mt-4 form-group">
+      <%= form.label :ABN %>
+      <%= form.text_field :abn, class: "form-control", required: true%>
+    </div>
 
 
-<div class="mt-4 form-group">
-  <%= form.label :photo %>
-  <%= form.file_field :photos, accept: "image/jpg, image/png, image/jpeg ", class: "form-control", multiple: "true" %>
-</div>
+    <div class="mt-4 form-group">
+      <%= form.label :photo %>
+      <%= form.file_field :photos, accept: "image/jpg, image/png, image/jpeg ", class: "form-control", multiple: "true" %>
+    </div>
 
-<%= form.hidden_field :user_id, value: current_user.id%>
-<br/>
-<%= form.submit "submit", class: "btn btn-secondary" %>
+    <%= form.hidden_field :user_id, value: current_user.id%>
 
-<% end %>
+    <br/>
+    
+    <%= form.submit "submit", class: "btn btn-secondary" %>
+
+  <% end %>
 </div>

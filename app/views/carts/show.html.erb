@@ -5,62 +5,59 @@
 
         <div class="d-flex justify-content-between align-items-center mb-4">
           <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
-          
         </div>
-        
-  <% @cart.line_items.each do |line_item| %>
 
+        <!-- Iterates through all the cart items and adds thier attributes through an instance variable-->
+        <% @cart.line_items.each do |line_item| %>
+          <div class="card rounded-3 mb-4">
+            <div class="card-body p-4">
+              <div class="row d-flex justify-content-between align-items-center">
 
-        <div class="card rounded-3 mb-4">
-          <div class="card-body p-4">
-            <div class="row d-flex justify-content-between align-items-center">
-              
-              <div class="col-md-3 col-lg-3 col-xl-3">
-                <p class="lead fw-normal mb-2"><%= line_item.product.name %></p>
-               
-              </div>
-              <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-               
-               <% if line_item.quantity >= 1 %>
-
-                    <%= link_to " - ", line_item_reduce_path(:id => line_item), method: :post %>  
-                    <%end%>
-                    <h5 class="text-grey mt-1 mr-1 ml-1"><%= line_item.quantity %></h5><i class="fa fa-plus text-success"></i>
-                    <%= link_to " + ", line_item_add_path(:id => line_item), method: :post %>
-
+                <div class="col-md-3 col-lg-3 col-xl-3">
+                  <p class="lead fw-normal mb-2"><%= line_item.product.name %></p>
+                </div>
                 
-              </div>
-              <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                <h5 class="mb-0">Price per item: <%= number_to_currency(line_item.product.price)%></h5>
-              </div>
-              <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-              <%= link_to "X", line_item_path(:id => line_item), method: :delete %><i class="fa fa-trash mb-1 text-danger"></i>
-                <i class="fas fa-trash fa-lg"></i></a>
+                <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                <!-- Ensures that the user cannot go under 0 in quanity by removing display of minus button-->
+                  <% if line_item.quantity >= 1 %>
+                    <!-- Add one to quantity, functionality outlined in controller-->
+                    <%= link_to " - ", line_item_reduce_path(:id => line_item), method: :post %>  
+                  <%end%>
+
+                    <h5 class="text-grey mt-1 mr-1 ml-1"><%= line_item.quantity %></h5><i class="fa fa-plus text-success"></i>
+                    <!-- Reduces one to quantity, functionality outlined in controller-->
+                    <%= link_to " + ", line_item_add_path(:id => line_item), method: :post %>
+                </div>
+
+
+                  <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                    <h5 class="mb-0">Price per item: <%= number_to_currency(line_item.product.price)%></h5>
+                  </div>
+
+                  <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                    <%= link_to "X", line_item_path(:id => line_item), method: :delete %><i class="fa fa-trash mb-1 text-danger"></i>
+                    <i class="fas fa-trash fa-lg"></i></a>
+                  </div>
+
               </div>
             </div>
-          </div>
-        </div>
+          </div>  
+        <%end%>
 
-     
-  <%end%>
-   <h3>Sub total: <%= number_to_currency(@current_cart.price) %></h3>
-   <p> Please note the minimum spend order is $30</p>
-   <%= link_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"} %>
-   <br/>
-  
+        <h3>Sub total: <%= number_to_currency(@current_cart.price) %></h3>
+        <p> Please note the minimum spend order is $30</p>
+        <%= link_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"} %>
+
+        <br/>
         
-        <% if @current_cart.price >= 30 %>
-    <button class="btn btn-outline-dark mt-3" type="button">
-    <%= link_to "Proceed to checkout", new_order_path %></button></div>
-  <% end %>
+          <!-- Prevents user checking out unless they have spent the minimum order amount-->
+          <% if @current_cart.price >= 30 %>
+            <button class="btn btn-outline-dark mt-3" type="button">
+            <%= link_to "Proceed to checkout", new_order_path %></button></div>
+          <% end %>
           </div>
-          
         </div>
-
       </div>
-      
-    </div>
-    
+    </div> 
   </div>
-  
 </section>

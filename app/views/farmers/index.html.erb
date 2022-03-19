@@ -4,16 +4,16 @@
 <h1> Our Farmers </h1>
 
 <div class="container">
-<div class="row row-cols-1 row-cols-md-3">
-  <% @farmers.each do |farmer| %>
-      <div class="col-md-4 mt-5">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title"> <%=link_to farmer.name, farmer_path(farmer.id) %></h5>
-            <p class="card-text"><%=farmer.about%></p>
+  <div class="row row-cols-1 row-cols-md-3">
+    <% @farmers.each do |farmer| %>
+        <div class="col-md-4 mt-5">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title"> <%=link_to farmer.name, farmer_path(farmer.id) %></h5>
+              <p class="card-text"><%=farmer.about%></p>
+            </div>
           </div>
         </div>
-      </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 </div>

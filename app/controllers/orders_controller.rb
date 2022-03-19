@@ -43,14 +43,14 @@ class OrdersController < ApplicationController
     
     puts charge
     @order = Order.create(user: current_user, price: @current_cart.price)
-      @current_cart.destroy #empty's the cart once the order has been processed. 
-      session[:cart_id] = nil
+    @current_cart.destroy #empty's the cart once the order has been processed. 
+    session[:cart_id] = nil
 
     rescue Stripe::CardError => e
       redirect_to root_path, alert: e.message
   end
   
-  private
+  #private
 
   #Original design had user imputting details for delivery - to be re, implemented. 
     #def order_params
