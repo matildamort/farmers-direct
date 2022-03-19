@@ -135,7 +135,7 @@ Wireframes for your app
 ![Desktop Cart](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Desktop%20-%20Shopping%20Cart.jpg)
 
 #### Tablet
-![Tablet Cart](hhttps://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Tablet%20-%20shopping%20cart.jpg)
+![Tablet Cart](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Tablet%20-%20shopping%20cart.jpg)
 
 #### Phone
 ![Phone index](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Phone%20-%20Shopping%20cart.jpg)
@@ -146,7 +146,7 @@ Wireframes for your app
 ![Desktop form various uses](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Desktop%20-%20From%20input%20various%20-%20new%20product%20-%20new%20farmer%20page%20ect%20%E2%80%93%201.jpg)
 
 #### Tablet & Phone
-![Phone&tablet form various uses](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Tablet%20-%20Index.jpg)
+![Phone&tablet form various uses](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Phone%20%26%20Tablet%20-%20From%20input%20various%20-%20new%20product%20-%20new%20farmer%20page%20ect.jpg)
 
 
 
