@@ -25,8 +25,7 @@ class OrdersController < ApplicationController
 
   def create
     
-    #@amount = (@sum * 100).to_i 
-    #puts @amount
+    @amount = (@current_cart.price*100).to_i 
 
     customer = Stripe::Customer.create(
       email: params[:stripeEmail], 
@@ -42,14 +41,12 @@ class OrdersController < ApplicationController
     )
 
     puts charge
-    @order = Order.create(price: @subtotal)
+    @order = Order.create(user: current_user, price: @current_cart.price)
+    @current_cart.destroy
+    session[:cart_id] = nil
 
     rescue Stripe::CardError => e
-      flash[:error] = e.message
-
- 
-    @order.save
-    redirect_to root_path
+      redirect_to root_path, alert: e.message
   end
   
   private

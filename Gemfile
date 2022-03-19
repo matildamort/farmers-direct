@@ -66,6 +66,6 @@ gem 'simple_form'
 gem 'aws-sdk-s3'
 gem 'image_optim', '~> 0.31.1'
 gem 'image_processing'
-gem 'dotenv-rails', :groups => [:developement, :test]
+gem 'dotenv-rails'
 gem 'ranker'
 gem "mini_magick"
