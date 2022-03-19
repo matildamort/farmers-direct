@@ -97,27 +97,57 @@ so that I can reduce my carbon footprint and also reduce the profit margin of co
 ## Wireframes
 Wireframes for your app
 
+### Index pages
+#### Desktop
 ![Desktop index](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Desktop%20-%20Index.jpg)
+
+#### Tablet
 ![Tablet index](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Tablet%20-%20Index.jpg)
+
+#### Phone
 ![Phone index](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Phone%20-%20index.jpg)
 
+### Sign-up page
+
+#### Desktop
 ![Desktop Sign-up](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Desktop%20-%20Sign-up.jpg)
+
+#### Tablet
 ![Tablet signup](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Tablet%20-%20Signup.jpg)
+
+#### Phone
 ![Phone signup](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Phone%20-%20Sign-up.jpg)
 
+### Sign-in page
+
+#### Desktop
 ![Desktop signin](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Desktop%20-%20Sign-in.jpg)
+
+#### Tablet
 ![Tablet signin](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Tablet%20-%20Signup-sign-in%20%E2%80%93%201.jpg)
+
+#### Phone
 ![Phone signin](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Phone%20-%20Sign-in.jpg)
 
+### Shopping Cart
 
-
+#### Desktop
 ![Desktop Cart](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Desktop%20-%20Shopping%20Cart.jpg)
+
+#### Tablet
 ![Tablet Cart](hhttps://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Tablet%20-%20shopping%20cart.jpg)
+
+#### Phone
 ![Phone index](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Phone%20-%20Shopping%20cart.jpg)
 
+### Forms
+
+#### Desktop
 ![Desktop form various uses](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Desktop%20-%20From%20input%20various%20-%20new%20product%20-%20new%20farmer%20page%20ect%20%E2%80%93%201.jpg)
+
+#### Tablet & Phone
 ![Phone&tablet form various uses](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Tablet%20-%20Index.jpg)
-![Phone index](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Phone%20-%20index.jpg)
+
 
 
 ## Screenshots
