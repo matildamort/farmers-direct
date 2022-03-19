@@ -1,5 +1,7 @@
-
+<br />
+<div class="d-flex justify-content-center">
 <H1> Add a new product </H1>
+</div>
 <div class="d-flex justify-content-center">
 <%= form_with model: @product do |f| %>
  <div class="mt-4 form-group">
@@ -16,12 +18,6 @@
 <%= f.label :price %>
 <%= f.number_field :price, :step => "0.05", class: "form-control", required: true%>
 </div>
-<div class="mt-4 form-group">
-<%= f.label :stock %>
-<%= f.number_field :stock, class: "form-control",required: true %>
-</div>
-
-
 
 <div class="mt-4 form-group">
 <%= f.label :image %>
@@ -33,7 +29,7 @@
 <%= f.select :category, [['Fruit','Fruit'],['Vegetable','Vegetable'],['Meat','Meat'],['Dairy','Dairy'],['Pantry','Pantry']],class: "dropdown-item", required: true %>
 </div>
 
-
+<!-- pulls user id into database to connect the product to that user -->
 <%= f.hidden_field :user_id, value: current_user.id%>
 
 

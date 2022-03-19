@@ -1,51 +1,50 @@
-      <header class="masthead text-center text-white">
-            <div class="masthead-content">
-                <div class="container px-2">
-                    <h1 class="masthead-heading mb-0">Meats</h1>
-                </div>
-            </div>
 
-             <!-- Header-->
-        </header>
+<!-- Header-->
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+        <div class="container px-2">
+            <h1 class="masthead-heading mb-0">Meat</h1>
+        </div>
+    </div>
+</header>
 
-
+<!-- Displays products only from one category -->
 <%= render'shared/product_nav' %>
 
-  <section class="card-columns">
+<section class="row row-cols-1 row-cols-md-4 d-flex align-self-stretch">
+
+  <!-- Displays products only from one category -->
         <% @meats.each do |product| %>
-       
-             <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <div class="col mb-5">
-                        <div class="card h-100">
+        <!-- Prevents a farmer viewing thier own product as a purchaser, farmer can go to thier products page to view thier current products and edit-->
+        <% if user_signed_in? and current_user.id==product.user_id %>
+        <!-- show's nothing-->
+
+        <%else%>
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="justify-content-center">
+                    <div class="col-mb-4">
+                        <div class="card h-150">
                             <!-- Product image-->
                             <%= image_tag product.productpic.representation(resize_to_limit: [190, 160]).processed, :crop => :fill if product.productpic.attached? %>
+
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder"><%=product.name%></h5>
                                     <!-- Product price-->
-                                   <p>$<%=product.price %></p>
+                                    <p>$<%=product.price %></p>
                                 </div>
                             </div>
+
                             <!-- Product actions-->
-                            <div class="text-center"><%= button_to "Add to cart", line_items_path(:product_id => product.id), :class => "btn btn-outline-dark mt-auto" %>
-
-
-                                    <% if user_signed_in? and (current_user.admin? or current_user.id==product.user_id) %>
-                                        <p><%= link_to "Edit", edit_product_path(product) %> |
-                                        <%= link_to "Delete", product_path(product), method: :delete, data: {confirm: "Are you sure?"} %></p>
-                                    <% end %>
-                
-                                    </div>
+                            <div class="text-center">
+                                <%= button_to "Add to cart", line_items_path(:product_id => product.id), :class => "btn btn-outline-dark mt-auto mb-4" %>
                             </div>
-                        </div>
-                    </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <% end %>
-        </section>
-    </div>
+                            <% end %>
+        <% end %>
+</section>

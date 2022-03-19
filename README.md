@@ -1,12 +1,9 @@
 # README
 
-### Deployed App
-https://farmers-direct-v2.herokuapp.com/ 
-
 ## Purpose 
-Coles and Woolworths attempt to complete with the low prices of Aldi has seen both businesses focus heavily of 'low prices'. Rather than reduce running costs or reducing operating costs through simplified operating such as Aldi's model, these businesses have used thier buying power and ‘negotiate’ price reductions. This fundamentally reduces our suppliers’ profit and loss to theirs
+Coles and Woolworths attempt to complete with the low prices of Aldi has seen both businesses focus heavily of 'low prices'. Rather than reduce running costs or reducing operating costs through simplified operating such as Aldi's model, these businesses have used thier buying power and ‘negotiate’ price reductions. This fundamentally undercuts our farmers. 
 
-This application seeks to allow farmers to set thier own pricing model on thier goods and sell directly to thier customers. Customers can choose which farmers they wish to puchase from, customers can purchase from multiple farmers within thier local and have one sinmple pick-up or delivery of thier purcase. 
+This application seeks to allow farmers to set thier own pricing model on thier goods and sell directly to thier customers. Customers can choose which farmers they wish to puchase from, customers can purchase from multiple farmers within thier local and have one simple delivery of thier purcase. 
 
 Once a customer has checked out, the order is placed with a farmer, who will drop off the goods at a centralised local warehouse for processing, quality control and shippment. 
 
@@ -20,18 +17,27 @@ There are currently a few apps on the market that have 'similar' concepts; howev
 I believe our farmers should recieve greater recognition and in turn profits for thier hard work and not be undervalued. In addition, we have a huge amount of food waste as the 'standard' of produce aesthetics is driven by our duopoly couple, coles and woolworths. This app provides an opportunity for farmers to sell these products directly without reducing the price or contributing to food waste unnessecarily. 
 
 ## Links
-A link (URL) to your deployed app (i.e. website)
-A link to your GitHub repository (repo).
+
+### Deployed App
+https://farmers-direct-v2.herokuapp.com/ 
+
+### GitHub
+https://github.com/matildamort/farmers-direct
+
+### Trello
+https://trello.com/b/MtCNmHtP/farmers-marketplace
+
+
 
 ## Description
 R11	Description of your marketplace app (website), including:
-- Purpose
+
 - Functionality / features
 - Sitemap
 - Screenshots
 - Target audience
 - Tech stack (e.g. html, css, deployment platform, etc) - GEMS used
-npm i bootstrap-icons 
+
 
 ## Target audience 
 
@@ -65,11 +71,33 @@ so that I can reduce my carbon footprint and also reduce the profit margin of co
 
 
 
-## ADD USER STORY TABLE HERE E.G IF USER IS LOGGED IN ECT ECT
-
+## USER STORY TABLE
+| Role   | Action                                                                               |
+|--------|--------------------------------------------------------------------------------------|
+| Guest  | See list of farmers and view more about each farmer                                  |
+| Guest  | Select add to cart, to be redirected to signup/signed                                |
+| Guest  | See list of products                                                                 |
+| Guest  | Sign-up and SignIn                                                                   |
+| Guest  | Filter by product                                                                    |
+| User   | Same things as guest                                                                 |
+| User   | Logout                                                                               |
+| User   | Add items to cart                                                                    |
+| User   | Checkout/purchase items                                                              |
+| Farmer | Same things as guest with restricted permissions on ability to purchase own products |
+| Farmer | Add products for sale                                                                |
+| Farmer | Add, edit & delete my own products                                                   |
+| Farmer | Create and edit about my farm page                                                   |
+| Admin  | Same things as farmer                                                                |
+| Admin  | Edit and delete all farmers products                                                 |
+| Admin  | Edit and delete all farmers about pages (not yet implemented)                        |
 
 ## Wireframes
 Wireframes for your app
+
+![Desktop index](app/assets/images/Wireframes/Desktop - Index.jpg)
+![Desktop index](app/assets/images/Wireframes/Phone - index.jpg)
+![Desktop index](app/assets/images/Wireframes/Desktop - Index.jpg)
+
 
 ## Screenshots
 SCREEN SHOTS OF FINAL SITE HERE
@@ -81,7 +109,27 @@ An ERD for your app
 Explain the different high-level components (abstractions) in your app
 
 ## Third party services
-Detail any third party services that your app will use
+
+### Ruby Gems
+This application uses a series of ruby gems that support the functionality of the application.
+
+gem 'devise' - Handled almost completely the user sign-up process. 
+gem 'bootstrap' - Handles all styling
+gem 'jquery-rails' - Javascript transpiler to convert JS 
+gem 'stripe' - Supports payment gateway
+gem 'simple_form' - Supports creation of forms and conencts specifically with devise which uses simple form as a standard. 
+gem 'aws-sdk-s3' - Supports the integration of imagery form AWS S3
+gem 'image_optim', '~> 0.31.1'
+gem 'image_processing'
+gem 'dotenv-rails'
+gem 'ranker'
+gem "mini_magick"
+
+npm i bootstrap-icons 
+
+The main 
+
+## Tech Stack
 
 ## Relationship model
 Describe your projects models in terms of the relationships (active record associations) they have with each other

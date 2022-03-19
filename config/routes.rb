@@ -14,8 +14,9 @@ Rails.application.routes.draw do
   get '/products/dairy' => "products#dairy"
   get '/products/pantry' => "products#pantry"
   get '/products/search' => "products#search"
-  get '/search', to: "products#search"
-  post '/search', to: "products#search"
+  post '/products/search' => "products#search"
+  #get '/search', to: "products#search"
+  #post '/search', to: "products#search"
 
   #Posting to array
   
@@ -35,7 +36,7 @@ Rails.application.routes.draw do
   post '/farmers' =>  "farmers#create"
   get '/farmers/mypage' => "farmers#mypage"
   get '/farmers/:id' =>  "farmers#show", as: "farmer"
-  get '/farmers/mypage' => "farmers#mypage"
+  
 
 
   resources :farmers do
@@ -58,6 +59,7 @@ Rails.application.routes.draw do
   resources :orders
   resources :line_items
   resources :type
+  resources :farmers
 
 
 end

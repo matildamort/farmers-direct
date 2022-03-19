@@ -97,7 +97,6 @@ ActiveRecord::Schema.define(version: 2022_03_16_094557) do
     t.string "name"
     t.string "description"
     t.float "price", default: 0.0
-    t.integer "stock"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
