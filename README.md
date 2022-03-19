@@ -105,8 +105,8 @@ Wireframes for your app
 ![Tablet signup](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Tablet%20-%20Signup.jpg)
 ![Phone signup](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Phone%20-%20Sign-up.jpg)
 
-![Desktop signin](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Desktop%20-%20Sign-up.jpg)
-![Tablet signin](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Tablet%20-%20Sign-in.jpg)
+![Desktop signin](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Desktop%20-%20Sign-in.jpg)
+![Tablet signin](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Tablet%20-%20Signup-sign-in%20%E2%80%93%201.jpg)
 ![Phone signin](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Phone%20-%20Sign-in.jpg)
 
 
