@@ -22,14 +22,13 @@
 
       <%=link_to 'Sign Out', destroy_user_session_path, method: 'delete', class:"nav-item 
         nav-link active" %>
-
-
-       
          <% if user_signed_in? and (current_user.admin? or current_user.farmer) %>
 
           <%= link_to'New Product', products_new_path, class:"nav-item nav-link active" %>
           <%= link_to'My Products', products_myproduct_path, class:"nav-item nav-link active" %>
           <%= link_to'My Page', farmers_mypage_path, class:"nav-item nav-link active" %>
+         
+          
         <%end%>
     <%end%>
 
@@ -42,10 +41,14 @@
 
 </div>
 <% end %>
+<% if user_signed_in? %>
+
+ <%= link_to cart_path(@current_cart), class:"nav-item nav-link active" do %>
+            <i class="bi bi-cart3" style="font-size: 1.25rem;" ></i>
+            <% end %>
+<% end %>
 
     </div>
   </div>
 </nav>
-
-
 
