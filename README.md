@@ -99,7 +99,7 @@ Wireframes for your app
 
 ![Desktop index](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Desktop%20-%20Index.jpg)
 ![Desktop index](Phone - index.jpg)
-![Desktop index](app/assets/images/Wireframes/Desktop - Index.jpg)
+![Desktop index](.app/assets/images/Wireframes/Desktop - Index.jpg)
 
 
 ## Screenshots
