@@ -74,16 +74,13 @@ so that I can reduce my carbon footprint and also reduce the profit margin of co
 ## USER STORY TABLE
 | Role   | Action                                                                               |
 |--------|--------------------------------------------------------------------------------------|
-<<<<<<< HEAD
 | Guest  | See list of farmers and view more about each farmer                                  |
 | Guest  | Select add to cart, to be redirected to signup/signed                                |
 | Guest  | See list of products                                                                 |
 | Guest  | Sign-up and SignIn                                                                   |
-=======
 | Guest  | See list of products                                                                 |
 | Guest  | Sign-up                                                                              |
 | Guest  | See local farmers                                                                    |
->>>>>>> 44d1390aee5a4fa0b1f57c312342483ece84aee5
 | Guest  | Filter by product                                                                    |
 | User   | Same things as guest                                                                 |
 | User   | Logout                                                                               |
