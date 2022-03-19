@@ -162,7 +162,7 @@ Explain the different high-level components (abstractions) in your app
 ## Third party services
 
 ### Ruby Gems
-This application uses a series of ruby gems that support the functionality of the application.
+This application uses a series of ruby gems that support the functionality of the application, apart from the ones that come as a standard with the Rails framework.
 
 gem 'devise' - Handled almost completely the user sign-up process. 
 gem 'bootstrap' - Handles all styling
@@ -170,17 +170,22 @@ gem 'jquery-rails' - Javascript transpiler to convert JS
 gem 'stripe' - Supports payment gateway
 gem 'simple_form' - Supports creation of forms and conencts specifically with devise which uses simple form as a standard. 
 gem 'aws-sdk-s3' - Supports the integration of imagery form AWS S3
-gem 'image_optim', '~> 0.31.1'
-gem 'image_processing'
-gem 'dotenv-rails'
+gem 'image_processing' - Manipulate images
+gem 'dotenv-rails' - automatically loads environment variables from a . env file into the process.For this app the STRIPE public and secret keys are stored in and env file. 
 gem 'ranker'
-gem "mini_magick"
+gem "mini_magick" - Manipulate images, different functions to image_processing
 
+
+### Installations required (Terminal Commands)
 npm i bootstrap-icons 
+rails g devise:install
+rails active_storage:install
 
 The main 
 
 ## Tech Stack
+
+
 
 ## Relationship model
 Describe your projects models in terms of the relationships (active record associations) they have with each other
