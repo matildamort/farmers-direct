@@ -98,8 +98,20 @@ so that I can reduce my carbon footprint and also reduce the profit margin of co
 Wireframes for your app
 
 ![Desktop index](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Desktop%20-%20Index.jpg)
-![Desktop index](Phone - index.jpg)
-![Desktop index](.app/assets/images/Wireframes/Desktop - Index.jpg)
+![Tablet index](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Tablet%20-%20Index.jpg)
+![Phone index](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Phone%20-%20index.jpg)
+
+![Desktop Sign-up](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Desktop%20-%20Sign-up.jpg)
+![Tablet signup](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Tablet%20-%20Signup.jpg)
+![Phone signup](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Phone%20-%20Sign-up.jpg)
+
+![Desktop Cart](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Desktop%20-%20Shopping%20Cart.jpg)
+![Tablet Cart](hhttps://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Tablet%20-%20shopping%20cart.jpg)
+![Phone index](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Phone%20-%20Shopping%20cart.jpg)
+
+![Phone&tablet form various uses](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Phone%20%26%20Tablet%20-%20From%20input%20various%20-%20new%20product%20-%20new%20farmer%20page%20ect.jpg)
+![Phone&tablet form various uses](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Tablet%20-%20Index.jpg)
+![Phone index](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Phone%20-%20index.jpg)
 
 
 ## Screenshots
