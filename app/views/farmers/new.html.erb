@@ -25,12 +25,12 @@
 
     <div class="mt-4 form-group">
       <%= form.label :photo %>
-      <%= form.file_field :photos, accept: "image/jpg, image/png, image/jpeg ", class: "form-control", multiple: "true" %>
+      <%= form.file_field :photos, accept: "image/jpg, image/png, image/jpeg ", class: "form-control", multiple: "true", required: true %>
     </div>
 
 
 <!-- pulls user id into database to connect the farmer page to that user -->
-    <%= form.hidden_field :user_id, value: current_user.id%>
+    <%= form.hidden_field :user_id, value: current_user.id %>
 
     <br/>
 
