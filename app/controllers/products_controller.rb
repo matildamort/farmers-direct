@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
 
     #Main product page, provides view of all products through instance variable. 
     def index
-        @products = Product.all  
+        @products = Product.all
     end
 
     def new

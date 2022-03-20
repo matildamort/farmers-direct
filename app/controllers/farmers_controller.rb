@@ -8,7 +8,9 @@ class FarmersController < ApplicationController
     require "mini_magick"
 
     def index
+        #@farmers = Farmer.all.order("farmer.name").eager_load(:name) - Attempt at Eagerloading, not taught in class and not great great resources easy to find :(
         @farmers = Farmer.all
+        
     end
 
     def new
