@@ -11,12 +11,14 @@ Farm Direct's model will be to take a percentage of all sales, to cover operatin
 
 
 
+
+
 ## Why this app?
 There are currently a few apps on the market that have 'similar' concepts; however this is still a niche market and the business models currently seen as different in that they either operate as one business, one face, one brand and do not promote the farmers directly or they have not integrated e-commerce and simply show the end user where the local farmers are and the customer has little option to purchase without contacting each farmer individually. 
 
 I believe our farmers should recieve greater recognition and in turn profits for thier hard work and not be undervalued. In addition, we have a huge amount of food waste as the 'standard' of produce aesthetics is driven by our duopoly couple, coles and woolworths. This app provides an opportunity for farmers to sell these products directly without reducing the price or contributing to food waste unnessecarily. 
-
-
+![Why?](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Screen%20Shot%202022-03-20%20at%2011.59.42%20am.png)
+![Why?](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Screen%20Shot%202022-03-20%20at%2012.00.17%20pm.png)
 
 
 ## Links
@@ -33,10 +35,14 @@ https://trello.com/b/MtCNmHtP/farmers-marketplace
 
 
 ## Description
-Functionality / features
+This application serves as a two way marketplace with a focus on the farmers ability to control thier sales. It allows Farmers to control
+ - Create a page about themselves
+ - Add products for sale, which are to then be delivered to a centralised processing. this allows users to purchase from multiple farmers and have one end delivery. 
+ - Purchase goods from other farmers for their own personal use. 
 
-
-
+ All users can
+  - Purchase goods for delivery
+  - See more about farmers
 
 
 ## Target audience 
@@ -68,6 +74,9 @@ so that I can eed my family more fresh food rather than filling on pasta and bre
 As a Gen Z,
 I want to purchase directly from suppliers and farmers,
 so that I can reduce my carbon footprint and also reduce the profit margin of corporate greed.
+
+
+![target audience](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Screen%20Shot%202022-03-20%20at%2011.59.42%20am.png)
 
 
 
@@ -156,11 +165,16 @@ so that I can reduce my carbon footprint and also reduce the profit margin of co
 ## Screenshots
 ![Screenshots](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/FD-Screenshots-final.jpg)
 
+
 ## Entity relationship diagram
-An ERD for your app
+
+![ERD](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/ERD.jpg)
+
 
 ## Abstractions
 Explain the different high-level components (abstractions) in your app
+
+
 
 ## Third party services
 
@@ -201,7 +215,7 @@ My Relationship model had a few small changes on what was achievable, Some items
 
 I believe my relationshop diagram acurately describes the relationships and these are implemented accurately in my models. e.g  Ashopping cart has_many :products, through: :line_items or an Order belongs_to :user (Although I havn't got a view to set up to show this yet). 
 
-![TechStack](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Relationship-Diagram-Farmers-Direct.jpeg)
+![Relationship Diagram](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Relationship-Diagram-Farmers-Direct.jpeg)
 
 
 
