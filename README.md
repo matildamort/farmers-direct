@@ -148,6 +148,9 @@ Wireframes for your app
 ![Phone&tablet form various uses](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Phone%20%26%20Tablet%20-%20From%20input%20various%20-%20new%20product%20-%20new%20farmer%20page%20ect.jpg)
 
 
+## Wireframes
+
+
 
 ## Screenshots
 SCREEN SHOTS OF FINAL SITE HERE
@@ -176,8 +179,8 @@ gem "mini_magick" - Manipulate images, different functions to image_processing
 
 
 ### Third party Applications
-AWS S3 - This is a cloud storage for image uploads
-Stripe - This is a payment processing platform and handled user purchases
+AWS S3 - This is a cloud storage for image uploads. When an image is uploaded by a user it is saved automatically to S3 cloud and displayed on the front end. 
+Stripe - This is a payment processing platform and handled user purchases, completely, with very little implemenation required. this can be cusomised, but at present is in basic format. 
 
 ### Installations required (Terminal Commands)
 npm i bootstrap-icons 
@@ -193,11 +196,25 @@ rails active_storage:install
 ## Relationship model
 Describe your projects models in terms of the relationships (active record associations) they have with each other
 
+My Relationship model had a few small changes on what was achievable, Some items in this did not get implemetned but are planned for future dev, I have left these in there and colour coded them red to indicate not yet complete. There are some discrepencies I believe between this model and the final outcome. For example, the model suggest that a farmer will own a product, which is 'somewhat' the case, however it is actually a user who owns the product and a user is also a farmer. 
+
+I believe my relationshop diagram acurately describes the relationships and these are implemented accurately in my models. e.g  Ashopping cart has_many :products, through: :line_items or an Order belongs_to :user (Although I havn't got a view to set up to show this yet). 
+
+![TechStack](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Relationship-Diagram-Farmers-Direct.jpeg)
+
+
+
 ## Database relations
 Discuss the database relations to be implemented in your application
 
 ## Database design
 Provide your database schema design - How is this different to your ERD and a photo of it. 
+
+
+
+
+
+
 
 ## Project Management and Prioritising
 R20	Describe the way tasks are allocated and tracked in your project - Use Trello, relationship between tasks and user story's - Add user stories to Trello. 
