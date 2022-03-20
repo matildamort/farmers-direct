@@ -16,6 +16,9 @@ There are currently a few apps on the market that have 'similar' concepts; howev
 
 I believe our farmers should recieve greater recognition and in turn profits for thier hard work and not be undervalued. In addition, we have a huge amount of food waste as the 'standard' of produce aesthetics is driven by our duopoly couple, coles and woolworths. This app provides an opportunity for farmers to sell these products directly without reducing the price or contributing to food waste unnessecarily. 
 
+
+
+
 ## Links
 
 ### Deployed App
@@ -30,10 +33,8 @@ https://trello.com/b/MtCNmHtP/farmers-marketplace
 
 
 ## Description
-R11	Description of your marketplace app (website), including:
-- Functionality / features
-- Sitemap
-- Screenshots
+Functionality / features
+
 
 
 
@@ -57,7 +58,7 @@ I want to sell my excess produce to the public without needing to deal with the 
 So that I can increase my profit margin, reduce waste and reduce labour time of waste management. 
 
 
-### Community memeber - lower soicio economic
+### Community member - lower soicio economic
 As an parent with a large family and low income, 
 I want be able to purchase afford to f, I don't care if the visual of the product is not great aslong as it is fresh, and
 so that I can eed my family more fresh food rather than filling on pasta and bread products
@@ -94,7 +95,6 @@ so that I can reduce my carbon footprint and also reduce the profit margin of co
 | Admin  | Edit and delete all farmers about pages (not yet implemented)                        |
 
 ## Wireframes
-Wireframes for your app
 
 ### Index pages
 #### Desktop
@@ -148,12 +148,13 @@ Wireframes for your app
 ![Phone&tablet form various uses](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Wireframes/Phone%20%26%20Tablet%20-%20From%20input%20various%20-%20new%20product%20-%20new%20farmer%20page%20ect.jpg)
 
 
-## Wireframes
+## Sitemap
 
+![Sitemap](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Screen%20Shot%202022-03-20%20at%209.56.11%20am.png)
 
 
 ## Screenshots
-SCREEN SHOTS OF FINAL SITE HERE
+![Screenshots](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/FD-Screenshots-final.jpg)
 
 ## Entity relationship diagram
 An ERD for your app
@@ -208,13 +209,23 @@ I believe my relationshop diagram acurately describes the relationships and thes
 Discuss the database relations to be implemented in your application
 
 ## Database design
-Provide your database schema design - How is this different to your ERD and a photo of it. 
+
+I think my schema is relitively the same as my ERD, omitting items not yet developed. Also, my 'origional' ERD did not have a shopping cart, which would not have worked, however this has been updated. Also some features still need views functionality such as product description, at present it is not being called from the DB to view. 
 
 
-
-
+![TechStack](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/FD-Schema-Final.jpg)
 
 
 
 ## Project Management and Prioritising
 R20	Describe the way tasks are allocated and tracked in your project - Use Trello, relationship between tasks and user story's - Add user stories to Trello. 
+
+TRELLO
+https://trello.com/b/MtCNmHtP/farmers-marketplace 
+
+The main features of the application were implemented as a priority starting with guest user story, to farmer user story. Items that were identified as to large for remaining timeframe were listed as out of time scope or for future dev. 
+
+What I realised however as I went is that the user stories should have been much larger and more detailed. E.g a user can add items to thier cart - which will take them to thier cart; however there was nothing to say, user can access thier cart so many features needed to be added for better UX that were not origiionally in the plan. 
+
+Once the app had the features required, styling was implemented as a basic and only towards the end was full styling given higher priority. 
+
