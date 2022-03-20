@@ -17,7 +17,7 @@ Farm Direct's model will be to take a percentage of all sales, to cover operatin
 There are currently a few apps on the market that have 'similar' concepts; however this is still a niche market and the business models currently seen as different in that they either operate as one business, one face, one brand and do not promote the farmers directly or they have not integrated e-commerce and simply show the end user where the local farmers are and the customer has little option to purchase without contacting each farmer individually. 
 
 I believe our farmers should recieve greater recognition and in turn profits for thier hard work and not be undervalued. In addition, we have a huge amount of food waste as the 'standard' of produce aesthetics is driven by our duopoly couple, coles and woolworths. This app provides an opportunity for farmers to sell these products directly without reducing the price or contributing to food waste unnessecarily. 
-![Why?](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Screen%20Shot%202022-03-20%20at%2011.59.42%20am.png)
+![Why?](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Screen%20Shot%202022-03-20%20at%2011.59.52%20am.png)
 ![Why?](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/Screen%20Shot%202022-03-20%20at%2012.00.17%20pm.png)
 
 
