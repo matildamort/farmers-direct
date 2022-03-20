@@ -174,6 +174,13 @@ so that I can reduce my carbon footprint and also reduce the profit margin of co
 ## Abstractions
 Explain the different high-level components (abstractions) in your app
 
+This is the best my brain can do right now! Clearly the last question and only details one process. 
+
+![MEME](https://www.google.com/search?q=shell+do+donkey+meme&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi26Z6N29P2AhVkSmwGHQH2A7oQ_AUoAXoECAEQAw&biw=1920&bih=912&dpr=1#imgrc=E-AE8a6-V7_vEM&imgdii=kN5Hvh9YTaWEnM)
+
+
+
+![MVC](https://github.com/matildamort/farmers-direct/blob/main/app/assets/images/MVC.jpg)
 
 
 ## Third party services
