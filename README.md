@@ -31,12 +31,11 @@ https://trello.com/b/MtCNmHtP/farmers-marketplace
 
 ## Description
 R11	Description of your marketplace app (website), including:
-
 - Functionality / features
 - Sitemap
 - Screenshots
-- Target audience
-- Tech stack (e.g. html, css, deployment platform, etc) - GEMS used
+
+
 
 
 ## Target audience 
@@ -200,5 +199,5 @@ Discuss the database relations to be implemented in your application
 ## Database design
 Provide your database schema design - How is this different to your ERD and a photo of it. 
 
-## TBA?
+## Project Management and Prioritising
 R20	Describe the way tasks are allocated and tracked in your project - Use Trello, relationship between tasks and user story's - Add user stories to Trello. 
