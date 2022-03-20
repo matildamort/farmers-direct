@@ -188,16 +188,16 @@ This is the best my brain can do right now! Clearly the last question and only d
 ### Ruby Gems
 This application uses a series of ruby gems that support the functionality of the application, apart from the ones that come as a standard with the Rails framework.
 
-gem 'devise' - Handlesalmost completely the user processing. 
-gem 'bootstrap' - Handles all styling
-gem 'jquery-rails' - Javascript transpiler to convert JS 
-gem 'stripe' - Supports payment gateway
-gem 'simple_form' - Supports creation of forms and conencts specifically with devise which uses simple form as a standard. 
-gem 'aws-sdk-s3' - Supports the integration of imagery form AWS S3
-gem 'image_processing' - Manipulate images
-gem 'dotenv-rails' - automatically loads environment variables from a . env file into the process.For this app the STRIPE public and secret keys are stored in and env file. 
-gem 'ranker'
-gem "mini_magick" - Manipulate images, different functions to image_processing
+- gem 'devise' - Handlesalmost completely the user processing. 
+- gem 'bootstrap' - Handles all styling
+- gem 'jquery-rails' - Javascript transpiler to convert JS 
+- gem 'stripe' - Supports payment gateway
+- gem 'simple_form' - Supports creation of forms and conencts specifically with devise which uses simple form as a standard. 
+- gem 'aws-sdk-s3' - Supports the integration of imagery form AWS S3
+- gem 'image_processing' - Manipulate images
+- gem 'dotenv-rails' - automatically loads environment variables from a . env file into the process.For this app the STRIPE public and secret keys are stored in and env file. 
+- gem 'ranker' - Think this was for the images also, but am now unsire, believe it supports arrays. To frightened to delete at his point. 
+- gem "mini_magick" - Manipulate images, different functions to image_processing
 
 
 ### Third party Applications
